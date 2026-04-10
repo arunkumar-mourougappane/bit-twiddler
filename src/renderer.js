@@ -60,6 +60,97 @@ $(document).ready(function() {
   // Initialize: animate default section and position pill on Base64
   updateActiveNav('base64-tool');
 
+  // ============================================================
+  // KEYBOARD SHORTCUTS — Cmd/Ctrl + 1–9 to jump to tools
+  // ============================================================
+  const navTargets = $navLinks.map(function() { return $(this).data('target'); }).get();
+
+  $(document).on('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && !e.shiftKey && !e.altKey) {
+      const num = parseInt(e.key);
+      if (num >= 1 && num <= 9 && num <= navTargets.length) {
+        e.preventDefault();
+        updateActiveNav(navTargets[num - 1]);
+      }
+    }
+  });
+
+  // ============================================================
+  // FAVORITES — pin tools to the top of the sidebar
+  // ============================================================
+  const toolOrder = [...navTargets]; // capture DOM order before any reordering
+
+  // Inject star buttons into every nav link dynamically
+  $navLinks.each(function() {
+    const target = $(this).data('target');
+    $(this).find('div').first()
+      .removeClass('space-x-3')
+      .addClass('gap-3 w-full');
+    $('<button>')
+      .addClass('fav-btn ml-auto flex-shrink-0')
+      .attr({ 'data-tool': target, title: 'Pin to top' })
+      .html('☆')
+      .appendTo($(this).find('div').first())
+      .on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const favs = JSON.parse(localStorage.getItem('bt-favorites') || '[]');
+        const idx = favs.indexOf(target);
+        idx >= 0 ? favs.splice(idx, 1) : favs.push(target);
+        localStorage.setItem('bt-favorites', JSON.stringify(favs));
+        applyFavoritesOrder();
+      });
+  });
+
+  const applyFavoritesOrder = () => {
+    const favs = JSON.parse(localStorage.getItem('bt-favorites') || '[]');
+    const $ul  = $('#nav-list');
+    const $pillEl = $('#nav-list .nav-active-pill').detach(); // remove pill from flow
+
+    // Remove divider, restore original order
+    $('.fav-divider').remove();
+    toolOrder.forEach(t => $(`a[data-target="${t}"]`).closest('li').appendTo($ul));
+
+    // Move favorites to top
+    [...favs].reverse().forEach(t => $(`a[data-target="${t}"]`).closest('li').prependTo($ul));
+
+    // Insert divider after last pinned item
+    if (favs.length) {
+      const $lastFav = $(`a[data-target="${favs[favs.length - 1]}"]`).closest('li');
+      $('<li class="fav-divider px-3 py-1"><div class="h-px bg-gray-700/40 rounded"></div></li>').insertAfter($lastFav);
+    }
+
+    // Sync star visual state
+    $('.fav-btn').each(function() {
+      const isFav = favs.includes($(this).data('tool'));
+      $(this).html(isFav ? '★' : '☆').toggleClass('is-fav', isFav);
+      $(this).closest('.nav-link').toggleClass('has-fav', isFav);
+    });
+
+    // Re-attach pill and reposition it under active link
+    $ul.append($pillEl);
+    const $active = $('.nav-link.active-tool');
+    if ($active.length) movePillTo($active.closest('li'));
+  };
+
+  applyFavoritesOrder(); // apply on load (restores persisted favorites)
+
+  // ============================================================
+  // THEME PICKER — 4 accent color schemes, persisted to localStorage
+  // ============================================================
+  const applyTheme = (theme) => {
+    const t = theme || 'ocean';
+    document.body.setAttribute('data-theme', t);
+    localStorage.setItem('bt-theme', t);
+    $('.theme-dot').removeClass('active-theme');
+    $(`.theme-dot[data-theme="${t}"]`).addClass('active-theme');
+  };
+
+  $('.theme-dot').on('click', function() { applyTheme($(this).data('theme')); });
+
+  // Restore saved theme (or default ocean)
+  applyTheme(localStorage.getItem('bt-theme') || 'ocean');
+
   // --- Base64 Tool Logic ---
   const $b64Plain = $('#base64-plain');
   const $b64Encoded = $('#base64-encoded');

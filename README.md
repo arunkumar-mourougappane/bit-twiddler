@@ -45,10 +45,12 @@ Instantly encode plaintext to Base64 or decode Base64 back to plaintext in a liv
 Generate cryptographic hashes for both **text strings** and **files**, powered by Node.js's native `crypto` module over a secure IPC bridge.
 
 #### Text Hashing
+
 - Hashes update live as you type
 - Simultaneous output for **MD5**, **SHA-1**, **SHA-256**, and **SHA-512**
 
 #### File Hashing
+
 - Select any file via the native file picker
 - Memory-efficient streaming via `fs.createReadStream` — handles files of any size without blocking the UI
 - **Live watching** — uses `fs.watch` with a 300 ms debounce to automatically recalculate hashes whenever the file changes on disk
@@ -195,20 +197,20 @@ Convert any integer between the four most common number bases simultaneously.
 
 ## Tech Stack
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| **Shell** | [Electron](https://www.electronjs.org/) v36 | Native window, IPC, file system access |
-| **Frontend** | HTML5 + [jQuery](https://jquery.com/) | DOM structure and reactive event handling |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) v3 | Utility-first dark-mode design system |
-| **Crypto** | Node.js `crypto` (built-in) | MD5 / SHA hashing via secure IPC bridge |
-| **File I/O** | Node.js `fs` (built-in) | Streaming file hashing + `fs.watch` live monitoring |
-| **QR Code** | [`qrcode`](https://www.npmjs.com/package/qrcode) npm | Server-side QR matrix generation as PNG Data URL |
+| Layer        | Technology                                           | Purpose                                             |
+| ------------ | ---------------------------------------------------- | --------------------------------------------------- |
+| **Shell**    | [Electron](https://www.electronjs.org/) v36          | Native window, IPC, file system access              |
+| **Frontend** | HTML5 + [jQuery](https://jquery.com/)                | DOM structure and reactive event handling           |
+| **Styling**  | [Tailwind CSS](https://tailwindcss.com/) v3          | Utility-first dark-mode design system               |
+| **Crypto**   | Node.js `crypto` (built-in)                          | MD5 / SHA hashing via secure IPC bridge             |
+| **File I/O** | Node.js `fs` (built-in)                              | Streaming file hashing + `fs.watch` live monitoring |
+| **QR Code**  | [`qrcode`](https://www.npmjs.com/package/qrcode) npm | Server-side QR matrix generation as PNG Data URL    |
 
 ---
 
 ## Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                  Renderer Process                   │
 │  (Chromium — index.html + renderer.js + jQuery)     │

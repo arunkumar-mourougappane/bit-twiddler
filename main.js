@@ -92,8 +92,10 @@ ipcMain.handle('stop-file-watch', () => {
     }
 });
 
+let mainWindow = null;
+
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
     webPreferences: {
@@ -173,7 +175,17 @@ const menuTemplate = [
       { role: 'zoomIn' },
       { role: 'zoomOut' },
       { type: 'separator' },
-      { role: 'togglefullscreen' }
+      { role: 'togglefullscreen' },
+      { type: 'separator' },
+      {
+        label: 'Always on Top',
+        type: 'checkbox',
+        checked: false,
+        accelerator: isMac ? 'Cmd+Shift+T' : 'Ctrl+Shift+T',
+        click(menuItem) {
+          if (mainWindow) mainWindow.setAlwaysOnTop(menuItem.checked);
+        }
+      }
     ]
   },
   {

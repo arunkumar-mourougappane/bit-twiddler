@@ -686,6 +686,10 @@ body {
   margin-left: 1rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -808,6 +812,10 @@ body {
 
 .h-full {
   height: 100%;
+}
+
+.h-px {
+  height: 1px;
 }
 
 .h-screen {
@@ -1259,6 +1267,11 @@ body {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
 }
 
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
+}
+
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
@@ -1280,9 +1293,22 @@ body {
   background-color: rgb(30 58 138 / 0.5);
 }
 
+.bg-emerald-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1));
+}
+
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-700\/40 {
+  background-color: rgb(55 65 81 / 0.4);
+}
+
+.bg-gray-700\/60 {
+  background-color: rgb(55 65 81 / 0.6);
 }
 
 .bg-gray-800 {
@@ -1362,8 +1388,18 @@ body {
   background-color: rgb(239 68 68 / 0.2);
 }
 
+.bg-rose-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity, 1));
+}
+
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-violet-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -1511,6 +1547,11 @@ body {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-5 {
@@ -2146,6 +2187,100 @@ aside > div:first-child {
 
 .nav-link.icon-clicked svg {
   animation: iconPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ============================================================
+   THEME SYSTEM — accent color overrides per data-theme
+   ============================================================ */
+
+/* --- Ocean (default, Tailwind blue) --- */
+
+/* Uses Tailwind's hardcoded blue — no overrides needed */
+
+/* --- Violet --- */
+
+body[data-theme="violet"] .nav-active-pill {
+  background: rgb(139 92 246 / 0.14);
+  border-color: rgb(139 92 246 / 0.30);
+}
+
+body[data-theme="violet"] .nav-link.active-tool {
+  color: #c4b5fd !important;
+}
+
+body[data-theme="violet"] aside > div:first-child h1 {
+  background-image: linear-gradient(to right, #a78bfa, #818cf8, #34d399) !important;
+}
+
+/* --- Emerald --- */
+
+body[data-theme="emerald"] .nav-active-pill {
+  background: rgb(16 185 129 / 0.14);
+  border-color: rgb(16 185 129 / 0.30);
+}
+
+body[data-theme="emerald"] .nav-link.active-tool {
+  color: #6ee7b7 !important;
+}
+
+body[data-theme="emerald"] aside > div:first-child h1 {
+  background-image: linear-gradient(to right, #6ee7b7, #34d399, #38bdf8) !important;
+}
+
+/* --- Rose --- */
+
+body[data-theme="rose"] .nav-active-pill {
+  background: rgb(244 63 94 / 0.14);
+  border-color: rgb(244 63 94 / 0.30);
+}
+
+body[data-theme="rose"] .nav-link.active-tool {
+  color: #fda4af !important;
+}
+
+body[data-theme="rose"] aside > div:first-child h1 {
+  background-image: linear-gradient(to right, #fda4af, #fb7185, #c084fc) !important;
+}
+
+/* ============================================================
+   THEME DOT — active state ring
+   ============================================================ */
+
+.theme-dot {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.theme-dot.active-theme {
+  outline-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   FAVORITES STAR BUTTON
+   ============================================================ */
+
+.fav-btn {
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #4b5563;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.nav-link:hover .fav-btn,
+.nav-link.has-fav .fav-btn {
+  opacity: 1;
+}
+
+.fav-btn:hover {
+  color: #facc15;
+  transform: scale(1.2);
+}
+
+.fav-btn.is-fav  {
+  color: #facc15;
+  opacity: 1 !important;
 }
 
 .selection\:bg-blue-500 *::-moz-selection {

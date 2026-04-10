@@ -104,3 +104,69 @@ aside > div:first-child {
 .nav-link.icon-clicked svg {
   animation: iconPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+/* ============================================================
+   THEME SYSTEM — accent color overrides per data-theme
+   ============================================================ */
+
+/* --- Ocean (default, Tailwind blue) --- */
+/* Uses Tailwind's hardcoded blue — no overrides needed */
+
+/* --- Violet --- */
+body[data-theme="violet"] .nav-active-pill {
+  background: rgb(139 92 246 / 0.14);
+  border-color: rgb(139 92 246 / 0.30);
+}
+body[data-theme="violet"] .nav-link.active-tool { color: #c4b5fd !important; }
+body[data-theme="violet"] aside > div:first-child h1 {
+  background-image: linear-gradient(to right, #a78bfa, #818cf8, #34d399) !important;
+}
+
+/* --- Emerald --- */
+body[data-theme="emerald"] .nav-active-pill {
+  background: rgb(16 185 129 / 0.14);
+  border-color: rgb(16 185 129 / 0.30);
+}
+body[data-theme="emerald"] .nav-link.active-tool { color: #6ee7b7 !important; }
+body[data-theme="emerald"] aside > div:first-child h1 {
+  background-image: linear-gradient(to right, #6ee7b7, #34d399, #38bdf8) !important;
+}
+
+/* --- Rose --- */
+body[data-theme="rose"] .nav-active-pill {
+  background: rgb(244 63 94 / 0.14);
+  border-color: rgb(244 63 94 / 0.30);
+}
+body[data-theme="rose"] .nav-link.active-tool { color: #fda4af !important; }
+body[data-theme="rose"] aside > div:first-child h1 {
+  background-image: linear-gradient(to right, #fda4af, #fb7185, #c084fc) !important;
+}
+
+/* ============================================================
+   THEME DOT — active state ring
+   ============================================================ */
+.theme-dot {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.theme-dot.active-theme {
+  outline-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   FAVORITES STAR BUTTON
+   ============================================================ */
+.fav-btn {
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #4b5563;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.nav-link:hover .fav-btn,
+.nav-link.has-fav .fav-btn {
+  opacity: 1;
+}
+.fav-btn:hover { color: #facc15; transform: scale(1.2); }
+.fav-btn.is-fav  { color: #facc15; opacity: 1 !important; }
