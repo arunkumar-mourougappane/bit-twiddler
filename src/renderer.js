@@ -724,4 +724,251 @@ $(document).ready(function() {
   $dateInput.val(now.toISOString().slice(0, 19));
   updateDateUI($dateInput.val());
 
+  // ============================================================
+  // Shared utility
+  // ============================================================
+  const escHtml = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  // ============================================================
+  // REGEX TESTER
+  // ============================================================
+  const runRegex = () => {
+    const pattern  = $('#regex-pattern').val();
+    const testStr  = $('#regex-input').val();
+    const $hl      = $('#regex-highlight');
+    const $count   = $('#regex-match-count');
+    const $status  = $('#regex-status');
+    const $list    = $('#regex-match-list');
+
+    if (!pattern) {
+      $hl.text(testStr);
+      $count.text('');
+      $status.html('');
+      $list.html('');
+      return;
+    }
+
+    let flags = '';
+    if ($('#rflag-g').is(':checked')) flags += 'g';
+    if ($('#rflag-i').is(':checked')) flags += 'i';
+    if ($('#rflag-m').is(':checked')) flags += 'm';
+    if ($('#rflag-s').is(':checked')) flags += 's';
+
+    let baseRegex;
+    try {
+      baseRegex = new RegExp(pattern, flags);
+      $status.html('<span class="text-green-400 font-mono">✓ valid</span>');
+    } catch (e) {
+      $status.html(`<span class="text-red-400">${escHtml(e.message)}</span>`);
+      $hl.text(testStr || '');
+      $count.text('');
+      $list.html('');
+      return;
+    }
+
+    // Collect all matches using a global copy to allow looping
+    const globalRegex = new RegExp(baseRegex.source, flags.includes('g') ? flags : flags + 'g');
+    globalRegex.lastIndex = 0;
+    const matches = [];
+    let m;
+    while ((m = globalRegex.exec(testStr)) !== null) {
+      matches.push({ index: m.index, value: m[0], groups: Array.from(m).slice(1) });
+      if (m[0].length === 0) globalRegex.lastIndex++; // avoid infinite loop on zero-width matches
+    }
+
+    // Build highlighted HTML
+    let html = '', last = 0;
+    matches.forEach((match, i) => {
+      html += escHtml(testStr.slice(last, match.index));
+      html += `<mark style="background:rgba(139,92,246,0.30);color:#c4b5fd;border-radius:2px;padding:0 1px" title="Match ${i + 1}">${escHtml(match.value)}</mark>`;
+      last = match.index + match.value.length;
+    });
+    html += escHtml(testStr.slice(last));
+    $hl.html(html || '<span class="text-gray-600 italic text-xs">Start typing a pattern...</span>');
+
+    const n = matches.length;
+    $count.text(n ? `${n} match${n !== 1 ? 'es' : ''}` : 'no matches');
+
+    // Match detail list
+    if (n === 0) {
+      $list.html('<div class="text-xs text-gray-600 italic px-2 py-1">No matches found.</div>');
+    } else {
+      $list.html(matches.map((match, i) => {
+        const groups = match.groups.filter(g => g !== undefined)
+          .map((g, gi) => `<span class="text-blue-400 ml-2">$${gi + 1}:<span class="text-gray-300">${escHtml(String(g))}</span></span>`).join('');
+        return `<div class="flex items-center gap-2 px-2 py-1 bg-gray-800/50 rounded-lg text-xs font-mono">
+          <span class="text-violet-500 font-bold w-5 text-right flex-shrink-0">${i + 1}</span>
+          <span class="text-gray-600">@${match.index}</span>
+          <span class="text-violet-300 truncate max-w-xs">${escHtml(match.value || '(empty)')}</span>
+          ${groups}
+        </div>`;
+      }).join(''));
+    }
+  };
+
+  $('#regex-pattern, #regex-input').on('input', runRegex);
+  $('#rflag-g, #rflag-i, #rflag-m, #rflag-s').on('change', runRegex);
+
+  // ============================================================
+  // DIFF VIEWER — pure LCS line diff, no external library needed
+  // ============================================================
+  const computeLineDiff = (oldText, newText) => {
+    const a = oldText.split('\n');
+    const b = newText.split('\n');
+    const m = a.length, n = b.length;
+
+    // Build LCS DP table
+    const dp = Array.from({ length: m + 1 }, () => new Int32Array(n + 1));
+    for (let i = 1; i <= m; i++)
+      for (let j = 1; j <= n; j++)
+        dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] + 1 : Math.max(dp[i-1][j], dp[i][j-1]);
+
+    // Backtrack to produce diff
+    const result = [];
+    let i = m, j = n;
+    while (i > 0 || j > 0) {
+      if (i > 0 && j > 0 && a[i-1] === b[j-1]) {
+        result.unshift({ type: 'equal', value: a[i-1] });
+        i--; j--;
+      } else if (j > 0 && (i === 0 || dp[i][j-1] >= dp[i-1][j])) {
+        result.unshift({ type: 'added', value: b[j-1] });
+        j--;
+      } else {
+        result.unshift({ type: 'removed', value: a[i-1] });
+        i--;
+      }
+    }
+    return result;
+  };
+
+  const runDiff = () => {
+    const orig = $('#diff-original').val();
+    const mod  = $('#diff-modified').val();
+
+    if (!orig && !mod) {
+      $('#diff-output').html('<div class="p-4 text-gray-600 italic">Paste text in both fields above to see the diff...</div>');
+      $('#diff-stats').html('');
+      return;
+    }
+
+    const diff = computeLineDiff(orig, mod);
+    let added = 0, removed = 0, html = '';
+
+    diff.forEach(part => {
+      const v = escHtml(part.value);
+      if (part.type === 'added') {
+        added++;
+        html += `<div class="flex items-stretch bg-green-500/10 border-l-2 border-green-500 hover:bg-green-500/15">
+          <span class="text-green-500 px-3 py-0.5 select-none font-bold flex-shrink-0">+</span>
+          <span class="flex-1 py-0.5 text-green-300 pr-3">${v}</span>
+        </div>`;
+      } else if (part.type === 'removed') {
+        removed++;
+        html += `<div class="flex items-stretch bg-red-500/10 border-l-2 border-red-600 hover:bg-red-500/15">
+          <span class="text-red-500 px-3 py-0.5 select-none font-bold flex-shrink-0">-</span>
+          <span class="flex-1 py-0.5 text-red-400 line-through opacity-75 pr-3">${v}</span>
+        </div>`;
+      } else {
+        html += `<div class="flex items-stretch border-l-2 border-transparent hover:bg-gray-800/20">
+          <span class="text-gray-700 px-3 py-0.5 select-none flex-shrink-0"> </span>
+          <span class="flex-1 py-0.5 text-gray-500 pr-3">${v}</span>
+        </div>`;
+      }
+    });
+
+    $('#diff-output').html(html || '<div class="p-4 text-gray-500">No differences — both texts are identical.</div>');
+
+    const stats = [
+      added   ? `<span class="text-green-400">+${added} added</span>` : '',
+      removed ? `<span class="text-red-400">-${removed} removed</span>` : '',
+      (!added && !removed) ? '<span class="text-gray-500">Identical</span>' : ''
+    ].filter(Boolean).join('');
+    $('#diff-stats').html(stats);
+  };
+
+  $('#diff-original, #diff-modified').on('input', runDiff);
+
+  // ============================================================
+  // NUMBER BASE CONVERTER
+  // ============================================================
+  const VALID_CHARS = { 2: /^[01]+$/, 8: /^[0-7]+$/, 10: /^[0-9]+$/, 16: /^[0-9A-Fa-f]+$/ };
+
+  const runBaseConvert = () => {
+    const raw      = $('#base-input').val().trim().replace(/\s/g, '');
+    const fromBase = parseInt($('#base-select').val());
+    const $error   = $('#base-error');
+    const $bitViz  = $('#base-bit-viz');
+
+    const clearOutputs = () => {
+      ['bin','oct','dec','hex'].forEach(k => $(`#base-out-${k}`).text('—'));
+      $bitViz.addClass('hidden');
+    };
+
+    if (!raw) { clearOutputs(); $error.addClass('hidden'); return; }
+
+    if (!VALID_CHARS[fromBase].test(raw)) {
+      $error.removeClass('hidden').text(`Invalid character for base ${fromBase}. Allowed: ${Object.keys(VALID_CHARS[fromBase].source.slice(2, -2).split(''))[0]}`);
+      clearOutputs();
+      return;
+    }
+
+    $error.addClass('hidden');
+
+    try {
+      const num = parseInt(raw, fromBase);
+      if (!isFinite(num) || isNaN(num)) throw new Error('Out of range');
+
+      const bin = num.toString(2);
+      const oct = num.toString(8);
+      const dec = num.toString(10);
+      const hex = num.toString(16).toUpperCase();
+
+      // Binary with space-separated nibbles (groups of 4)
+      $('#base-out-bin').text(bin.match(/.{1,4}/g).join(' ') || bin);
+      $('#base-out-oct').text(oct);
+      $('#base-out-dec').text(dec);
+      $('#base-out-hex').text('0x' + hex);
+
+      // Bit width visualization
+      const bitWidth = num <= 0xFF ? 8 : num <= 0xFFFF ? 16 : num <= 0xFFFFFFFF ? 32 : 64;
+      const padded   = bin.padStart(bitWidth, '0');
+      const grouped  = padded.match(/.{1,8}/g) || [padded];
+
+      $('#base-bits').html(
+        grouped.map((byte, bi) =>
+          (bi > 0 ? '<span class="mx-2 text-gray-700 select-none">|</span>' : '') +
+          byte.split('').map(c =>
+            c === '1'
+              ? `<span class="text-amber-400 font-bold">${c}</span>`
+              : `<span class="text-gray-600">${c}</span>`
+          ).join('')
+        ).join('') +
+        `<span class="ml-4 text-xs text-gray-600 font-sans">${bitWidth}-bit</span>`
+      );
+      $bitViz.removeClass('hidden');
+
+    } catch (e) {
+      $error.removeClass('hidden').text('Conversion error: ' + e.message);
+      clearOutputs();
+    }
+  };
+
+  $('#base-input').on('input', runBaseConvert);
+  $('#base-select').on('change', () => { $('#base-input').val(''); runBaseConvert(); });
+
+  // Copy buttons for base converter
+  $(document).on('click', '.base-copy-btn', function () {
+    const id  = $(this).data('target');
+    const txt = $(`#${id}`).text().replace(/\s/g, '');
+    if (!txt || txt === '—') return;
+    navigator.clipboard.writeText(txt);
+    const $btn = $(this), orig = $btn.text();
+    $btn.text('Copied!');
+    setTimeout(() => $btn.text(orig), 1500);
+  });
+
 });

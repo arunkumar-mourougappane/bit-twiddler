@@ -82,6 +82,30 @@
             </div>
           </a>
         </li>
+        <li>
+          <a href="#" data-target="regex-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <span>Regex Tester</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="diff-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+              <span>Diff Viewer</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="base-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+              <span>Base Converter</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -455,6 +479,144 @@
                  <img id="qr-image" class="hidden w-full h-full object-contain rounded-md" alt="Generated QR Code">
              </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ===== REGEX TESTER ===== -->
+      <section id="regex-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Regex Tester</h2>
+          <p class="text-gray-400">Write, test and debug regular expressions with live match highlighting.</p>
+        </header>
+
+        <!-- Pattern Bar -->
+        <div class="flex items-center gap-2 bg-gray-800/60 border border-gray-700 hover:border-violet-500/40 rounded-xl px-4 py-3 mb-4 transition-colors">
+          <span class="text-violet-400 font-mono text-xl font-bold select-none">/</span>
+          <input id="regex-pattern" type="text" spellcheck="false" placeholder="([A-Z])\w+" class="flex-1 bg-transparent font-mono text-sm text-violet-300 focus:outline-none placeholder:text-gray-600">
+          <span class="text-violet-400 font-mono text-xl font-bold select-none">/</span>
+          <!-- Flag toggles -->
+          <div class="flex items-center gap-2 ml-2 border-l border-gray-700 pl-3">
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-g" checked class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">g</span></label>
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-i" class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">i</span></label>
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-m" class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">m</span></label>
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-s" class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">s</span></label>
+          </div>
+          <div id="regex-status" class="ml-3 text-xs font-semibold"></div>
+        </div>
+
+        <!-- Split view -->
+        <div class="grid grid-cols-2 gap-4 h-[360px]">
+          <!-- Left: editable test input -->
+          <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40 flex items-center justify-between">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Test String</span>
+              <span id="regex-match-count" class="text-xs font-semibold text-violet-400"></span>
+            </div>
+            <textarea id="regex-input" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="Paste text to test against..."></textarea>
+          </div>
+          <!-- Right: highlighted output + match list -->
+          <div class="flex flex-col bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Match Highlights</span>
+            </div>
+            <div id="regex-highlight" class="flex-1 p-4 font-mono text-sm leading-relaxed overflow-y-auto whitespace-pre-wrap break-all text-gray-400"></div>
+            <div id="regex-match-list" class="border-t border-gray-800 max-h-32 overflow-y-auto space-y-1 p-2"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DIFF VIEWER ===== -->
+      <section id="diff-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Diff Viewer</h2>
+          <p class="text-gray-400">Compare two text blocks and visualize line-by-line differences.</p>
+        </header>
+
+        <!-- Input pair -->
+        <div class="grid grid-cols-2 gap-4 h-44 mb-4">
+          <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2 border-b border-gray-800 bg-gray-800/40 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500 flex-shrink-0"></span>
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Original</span>
+            </div>
+            <textarea id="diff-original" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="Paste original text..."></textarea>
+          </div>
+          <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2 border-b border-gray-800 bg-gray-800/40 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0"></span>
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Modified</span>
+            </div>
+            <textarea id="diff-modified" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="Paste modified text..."></textarea>
+          </div>
+        </div>
+
+        <!-- Diff output -->
+        <div class="bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden">
+          <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40 flex items-center justify-between">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Diff Output</span>
+            <div id="diff-stats" class="flex gap-4 text-xs font-semibold"></div>
+          </div>
+          <div id="diff-output" class="font-mono text-xs leading-6 overflow-y-auto max-h-72">
+            <div class="p-4 text-gray-600 italic">Paste text in both fields above to see the diff...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== NUMBER BASE CONVERTER ===== -->
+      <section id="base-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Base Converter</h2>
+          <p class="text-gray-400">Convert numbers between binary, octal, decimal, and hexadecimal in real-time.</p>
+        </header>
+
+        <!-- Input row -->
+        <div class="flex gap-3 mb-4">
+          <input id="base-input" type="text" spellcheck="false" placeholder="Enter a number..." class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-amber-500/60 rounded-xl px-4 py-3 font-mono text-lg text-amber-300 focus:outline-none transition-colors placeholder:text-gray-600">
+          <select id="base-select" class="bg-gray-800/60 border border-gray-700 focus:border-amber-500/60 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none transition-colors cursor-pointer">
+            <option value="2">Base 2 — Binary</option>
+            <option value="8">Base 8 — Octal</option>
+            <option value="10" selected>Base 10 — Decimal</option>
+            <option value="16">Base 16 — Hex</option>
+          </select>
+        </div>
+        <div id="base-error" class="hidden mb-4 text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-2"></div>
+
+        <!-- Output cards 2x2 -->
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group hover:border-amber-500/30 transition-colors">
+            <div class="flex items-center justify-between mb-2">
+              <div><span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Binary</span><span class="text-xs text-gray-600">Base 2</span></div>
+              <button class="base-copy-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-500 hover:text-amber-400 font-semibold" data-target="base-out-bin">Copy</button>
+            </div>
+            <div id="base-out-bin" class="font-mono text-sm text-amber-300 break-all leading-relaxed min-h-6">—</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group hover:border-orange-500/30 transition-colors">
+            <div class="flex items-center justify-between mb-2">
+              <div><span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Octal</span><span class="text-xs text-gray-600">Base 8</span></div>
+              <button class="base-copy-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-500 hover:text-orange-400 font-semibold" data-target="base-out-oct">Copy</button>
+            </div>
+            <div id="base-out-oct" class="font-mono text-lg text-orange-300 min-h-6">—</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group hover:border-yellow-500/30 transition-colors">
+            <div class="flex items-center justify-between mb-2">
+              <div><span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Decimal</span><span class="text-xs text-gray-600">Base 10</span></div>
+              <button class="base-copy-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-500 hover:text-yellow-400 font-semibold" data-target="base-out-dec">Copy</button>
+            </div>
+            <div id="base-out-dec" class="font-mono text-lg text-yellow-300 min-h-6">—</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group hover:border-rose-500/30 transition-colors">
+            <div class="flex items-center justify-between mb-2">
+              <div><span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Hexadecimal</span><span class="text-xs text-gray-600">Base 16</span></div>
+              <button class="base-copy-btn opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-500 hover:text-rose-400 font-semibold" data-target="base-out-hex">Copy</button>
+            </div>
+            <div id="base-out-hex" class="font-mono text-lg text-rose-300 min-h-6">—</div>
+          </div>
+        </div>
+
+        <!-- Bit visualization -->
+        <div id="base-bit-viz" class="hidden bg-gray-900/50 rounded-xl border border-gray-700/50 p-5">
+          <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Bit Representation</div>
+          <div id="base-bits" class="font-mono text-sm tracking-widest leading-loose"></div>
         </div>
       </section>
 

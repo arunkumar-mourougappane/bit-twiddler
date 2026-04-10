@@ -59,6 +59,9 @@ aside > div:first-child {
 #nav-list li:nth-child(6) { animation-delay: 0.29s; }
 #nav-list li:nth-child(7) { animation-delay: 0.34s; }
 #nav-list li:nth-child(8) { animation-delay: 0.39s; }
+#nav-list li:nth-child(9)  { animation-delay: 0.44s; }
+#nav-list li:nth-child(10) { animation-delay: 0.49s; }
+#nav-list li:nth-child(11) { animation-delay: 0.54s; }
 
 /* --- Sliding pill indicator --- */
 #nav-list {
