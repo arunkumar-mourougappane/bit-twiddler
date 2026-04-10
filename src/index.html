@@ -42,6 +42,46 @@
             </div>
           </a>
         </li>
+        <li>
+          <a href="#" data-target="json-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+              <span>JSON Formatter</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="jwt-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <span>JWT Decoder</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="color-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+              <span>Color Converter</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="uuid-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <span>UUID Generator</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="qr-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+              <span>QR Code Generator</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -81,9 +121,30 @@
           <p class="text-gray-400">Generate secure hashes in real-time using common algorithms.</p>
         </header>
         <div class="max-w-3xl">
-          <div class="mb-4">
+          <div class="mb-6 flex space-x-4 border-b border-gray-800 pb-2">
+             <button class="hash-tab-btn active text-blue-400 font-bold border-b-2 border-blue-500 px-1 pb-1 transition-colors" data-view="hash-text-view">Text Hash</button>
+             <button class="hash-tab-btn text-gray-500 font-bold border-b-2 border-transparent hover:text-gray-300 px-1 pb-1 transition-colors" data-view="hash-file-view">File Hash</button>
+          </div>
+
+          <div id="hash-text-view" class="mb-4 hash-view">
             <div class="bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
               <textarea id="hash-input" class="w-full h-24 bg-transparent p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg transition-all resize-none" placeholder="Enter data to hash..."></textarea>
+            </div>
+          </div>
+
+          <div id="hash-file-view" class="mb-4 hash-view hidden">
+            <div class="bg-gray-800/30 rounded-xl border-2 border-dashed border-gray-700 hover:border-blue-500/50 transition-colors p-6 flex flex-col items-center justify-center relative shadow-inner group">
+              <input type="file" id="hash-file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+              <svg class="w-8 h-8 text-gray-500 mb-3 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+              <p class="text-gray-300 font-medium mb-1 group-hover:text-white transition-colors"><span class="text-blue-400">Click to upload file</span> or drag and drop</p>
+              <p id="hash-file-name" class="text-xs text-gray-500 mt-1 truncate max-w-full px-4 text-center"></p>
+            </div>
+            <div id="hash-file-live-indicator" class="hidden mt-3 flex items-center space-x-2 text-xs font-semibold text-green-400 opacity-80 pl-2">
+               <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+               </span>
+               <span class="uppercase tracking-widest text-[10px]">Live watching</span>
             </div>
           </div>
           
@@ -158,6 +219,242 @@
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <!-- JSON Formatter Tool -->
+      <section id="json-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">JSON Formatter</h2>
+          <p class="text-gray-400">Validate, format, and structure JSON intelligently.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[600px]">
+          <!-- Left Layout: Input -->
+          <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+            <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center bg-gray-800/40 rounded-t-lg">
+              <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Raw JSON</label>
+              <div class="flex items-center space-x-3">
+                 <button id="json-clear-btn" class="text-xs text-gray-500 hover:text-red-400 transition font-semibold focus:outline-none tracking-wide uppercase mt-0.5">Clear</button>
+                 <span id="json-status" class="text-xs text-gray-500 font-semibold px-2 py-0.5 rounded">Ready</span>
+              </div>
+            </div>
+            <textarea id="json-input" class="flex-1 bg-transparent p-4 text-gray-200 focus:outline-none rounded-b-lg transition-all resize-none font-mono text-sm leading-relaxed" placeholder="Paste unformatted JSON here..." spellcheck="false"></textarea>
+          </div>
+
+          <!-- Right Layout: Output Tabs -->
+          <div class="flex flex-col bg-gray-900/50 p-1 rounded-xl border border-gray-700 shadow-xl overflow-hidden relative">
+            <div class="flex justify-between items-end px-2 pt-2 border-b border-gray-800 bg-gray-800/50 rounded-t-lg">
+              <div class="flex space-x-2">
+                <button class="json-tab-btn active px-4 py-2 text-sm font-bold border-b-2 border-blue-500 text-blue-400 transition" data-view="json-text-view">Text View</button>
+                <button class="json-tab-btn px-4 py-2 text-sm font-bold border-b-2 border-transparent text-gray-500 hover:text-gray-300 transition" data-view="json-tree-view">Tree View</button>
+              </div>
+              <div class="flex items-center space-x-2 mb-1.5 pr-1">
+                <div class="relative">
+                  <input type="text" id="json-search" class="bg-gray-900 border border-gray-700/80 rounded px-2.5 py-1.5 pl-8 text-xs text-gray-200 focus:outline-none focus:border-blue-500 w-36 focus:w-56 transition-all shadow-inner" placeholder="Search tree (Enter)">
+                  <svg class="w-3.5 h-3.5 text-gray-500 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <button id="json-copy-btn" class="bg-blue-600/20 hover:bg-blue-500/40 text-blue-400 border border-blue-500/40 rounded px-3 py-1.5 text-xs font-semibold transition shadow-sm">Copy JSON</button>
+              </div>
+            </div>
+            
+            <div class="flex-1 overflow-auto relative rounded-b-lg">
+              <!-- Text View Pane -->
+              <div id="json-text-view" class="json-view-pane absolute inset-0 p-4 overflow-auto">
+                <pre><code id="json-output-text" class="font-mono text-[13px] leading-relaxed break-all whitespace-pre-wrap text-gray-300"></code></pre>
+              </div>
+
+              <!-- Tree View Pane -->
+              <div id="json-tree-view" class="json-view-pane hidden absolute inset-0 p-4 overflow-auto">
+                <div id="json-output-tree" class="font-mono text-[13px] text-gray-200 space-y-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JWT Decoder Tool -->
+      <section id="jwt-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">JWT Decoder</h2>
+          <p class="text-gray-400">Decode JSON Web Tokens instantly and analyze structured payloads.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[600px]">
+          <!-- Left Layout: Input -->
+          <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+            <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center bg-gray-800/40 rounded-t-lg">
+              <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Raw JWT Token</label>
+              <div class="flex items-center space-x-3">
+                 <button id="jwt-clear-btn" class="text-xs text-gray-500 hover:text-red-400 transition font-semibold focus:outline-none tracking-wide uppercase mt-0.5">Clear</button>
+                 <span id="jwt-status" class="text-xs text-gray-500 font-semibold px-2 py-0.5 rounded">Ready</span>
+              </div>
+            </div>
+            <textarea id="jwt-input" class="flex-1 bg-transparent p-4 text-pink-400/80 focus:outline-none rounded-b-lg transition-all resize-none font-mono text-xs leading-relaxed break-all" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." spellcheck="false"></textarea>
+          </div>
+
+          <!-- Right Layout: Output Layout -->
+          <div class="flex flex-col bg-gray-900/50 p-1 rounded-xl border border-gray-700 shadow-xl overflow-hidden relative">
+            <div class="flex justify-between items-end px-3 py-2 border-b border-gray-800 bg-gray-800/50 rounded-t-lg">
+              <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-1">Decoded Data</label>
+              <div class="flex items-center space-x-2">
+                <div class="relative">
+                  <input type="text" id="jwt-search" class="bg-gray-900 border border-gray-700/80 rounded px-2.5 py-1 pl-8 text-xs text-gray-200 focus:outline-none focus:border-blue-500 w-36 focus:w-48 transition-all shadow-inner" placeholder="Search claims (Enter)">
+                  <svg class="w-3.5 h-3.5 text-gray-500 absolute left-2.5 top-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+              </div>
+            </div>
+            
+            <div id="jwt-tree-view" class="flex-1 overflow-auto p-4 rounded-b-lg scrollbar-hide">
+                <div class="mb-4">
+                   <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 border-b border-gray-800 pb-1">Header</h3>
+                   <div id="jwt-output-header" class="font-mono text-[13px] text-gray-200 space-y-1"></div>
+                </div>
+                <div class="mb-4">
+                   <h3 class="text-xs font-bold text-pink-500/80 uppercase tracking-widest mb-2 border-b border-gray-800 pb-1">Payload</h3>
+                   <div id="jwt-output-payload" class="font-mono text-[13px] text-gray-200 space-y-1"></div>
+                </div>
+                <div>
+                   <h3 class="text-xs font-bold text-blue-500/80 uppercase tracking-widest mb-2 border-b border-gray-800 pb-1">Signature</h3>
+                   <div id="jwt-output-signature" class="font-mono text-[11px] text-blue-300/80 break-all bg-blue-900/10 p-2 rounded border border-blue-900/30"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Color Converter Tool -->
+      <section id="color-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Color Converter</h2>
+          <p class="text-gray-400">Translate hex structures into dynamic web-safe coordinates perfectly.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[500px]">
+          <!-- Left Layout: Input -->
+          <div class="lg:col-span-4 flex flex-col justify-center bg-gray-800/30 p-8 rounded-xl border border-gray-800 shadow-inner">
+             <div class="mb-4">
+               <label class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2 text-center">Enter Hex</label>
+               <input id="color-input" type="text" class="w-full bg-gray-900 border-2 border-gray-700/80 hover:border-gray-600 focus:border-blue-500 rounded-lg px-4 py-3 text-2xl font-mono text-center text-white focus:outline-none transition-colors" placeholder="#FF5733" spellcheck="false" autocomplete="off">
+               <p id="color-error" class="hidden text-red-500/80 text-[11px] font-bold uppercase tracking-widest mt-3 text-center transition-all animate-pulse">Invalid Hex Format</p>
+             </div>
+          </div>
+
+          <!-- Right Layout: Output Layout -->
+          <div class="lg:col-span-8 flex flex-col space-y-4">
+             <div id="color-swatch" class="w-full h-32 rounded-2xl bg-gray-800/50 shadow-xl border border-gray-700/50 transition-colors duration-200"></div>
+             
+             <div class="grid grid-cols-2 gap-4 flex-1">
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-gray-500 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">HEX</label>
+                   <span id="color-out-hex" class="font-mono text-lg text-gray-300"></span>
+                </div>
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-blue-500/50 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">RGB</label>
+                   <span id="color-out-rgb" class="font-mono text-lg text-blue-300"></span>
+                </div>
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-purple-500/50 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">HSL</label>
+                   <span id="color-out-hsl" class="font-mono text-lg text-purple-300"></span>
+                </div>
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-pink-500/50 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">CMYK</label>
+                   <span id="color-out-cmyk" class="font-mono text-lg text-pink-300"></span>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UUID Generator Tool -->
+      <section id="uuid-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">UUID Generator</h2>
+          <p class="text-gray-400">Generate cryptographically secure universal identifiers instantly.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[500px]">
+          <!-- Left Layout: Controls -->
+          <div class="lg:col-span-4 flex flex-col bg-gray-800/40 p-6 rounded-xl border border-gray-700/50 shadow-inner">
+             <div class="mb-6">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">Quantity (1-1000)</label>
+                <input id="uuid-qty" type="number" min="1" max="1000" value="1" class="w-full bg-gray-900 border border-gray-700 focus:border-blue-500 rounded px-3 py-2 text-gray-200 focus:outline-none transition-colors font-mono">
+             </div>
+
+             <div class="space-y-4 mb-8">
+                <label class="flex items-center space-x-3 cursor-pointer group">
+                   <div class="relative flex items-center justify-center">
+                       <input type="checkbox" id="uuid-upper" class="peer sr-only">
+                       <div class="w-5 h-5 bg-gray-900 border border-gray-600 rounded peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-colors"></div>
+                       <svg class="w-3.5 h-3.5 text-white absolute inset-0 m-auto opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                   </div>
+                   <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Uppercase</span>
+                </label>
+
+                <label class="flex items-center space-x-3 cursor-pointer group">
+                   <div class="relative flex items-center justify-center">
+                       <input type="checkbox" id="uuid-hyphens" class="peer sr-only">
+                       <div class="w-5 h-5 bg-gray-900 border border-gray-600 rounded peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-colors"></div>
+                       <svg class="w-3.5 h-3.5 text-white absolute inset-0 m-auto opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                   </div>
+                   <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Remove Hyphens</span>
+                </label>
+             </div>
+
+             <button id="uuid-generate-btn" class="mt-auto w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-blue-500/20 transition-all uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Generate UUIDs
+             </button>
+          </div>
+
+          <!-- Right Layout: Output -->
+          <div class="lg:col-span-8 flex flex-col bg-gray-900/50 rounded-xl border border-gray-700 shadow-xl relative overflow-hidden">
+             <div class="flex justify-between items-center px-4 py-3 border-b border-gray-800 bg-gray-800/30">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                    Generated Hash Output
+                </span>
+                <button id="uuid-copy-btn" class="bg-blue-600/20 hover:bg-blue-500/40 text-blue-400 border border-blue-500/40 rounded px-3 py-1.5 text-xs font-semibold transition shadow-sm flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    Copy All
+                </button>
+             </div>
+             
+             <textarea id="uuid-output" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-green-400/90 resize-none focus:outline-none leading-relaxed tracking-wider" readonly spellcheck="false" placeholder="Waiting for generation..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- QR Code Generator Tool -->
+      <section id="qr-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">QR Code Generator</h2>
+          <p class="text-gray-400">Instantly generate high-resolution QR codes dynamically from structured payloads.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[500px]">
+          <!-- Left Layout: Input -->
+          <div class="lg:col-span-6 flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+             <div class="px-4 py-3 border-b border-gray-800 bg-gray-800/40 rounded-t-xl flex items-center justify-between">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest block">Data Payload</label>
+                <button id="qr-clear-btn" class="text-xs text-gray-500 hover:text-red-400 transition font-semibold focus:outline-none tracking-wide uppercase">Clear</button>
+             </div>
+             <textarea id="qr-input" class="flex-1 w-full bg-transparent p-5 font-mono text-[13px] text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="Enter text or URL to visualize the QR code... (e.g. https://google.com)"></textarea>
+          </div>
+
+          <!-- Right Layout: Output Layout -->
+          <div class="lg:col-span-6 flex flex-col items-center justify-center bg-gray-900/50 p-6 rounded-xl border border-gray-700/50 shadow-xl relative">
+             <div class="absolute top-4 right-4 group">
+                 <button id="qr-download-btn" class="hidden bg-blue-600 hover:bg-blue-500 text-white p-2.5 rounded-lg shadow-lg hover:shadow-blue-500/20 transition-all flex items-center justify-center" aria-label="Download QR">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                 </button>
+             </div>
+             <div id="qr-image-container" class="w-72 h-72 bg-white rounded-2xl shadow-2xl flex items-center justify-center p-4 transition-all duration-300 transform scale-100 opacity-20 border-4 border-gray-800">
+                 <span id="qr-placeholder" class="text-xs font-bold text-gray-400 uppercase tracking-widest">Awaiting Input...</span>
+                 <!-- QRCode injected Native Data URL Image -->
+                 <img id="qr-image" class="hidden w-full h-full object-contain rounded-md" alt="Generated QR Code">
+             </div>
+          </div>
         </div>
       </section>
 
