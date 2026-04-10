@@ -4,33 +4,61 @@ $(document).ready(function() {
   const $navLinks = $('.nav-link');
   const $toolSections = $('.tool-section');
 
+  // Build the sliding pill indicator element
+  const $pill = $('<div>').addClass('nav-active-pill').appendTo('#nav-list');
+
+  const movePillTo = ($li) => {
+    $pill.css({
+      top:     $li[0].offsetTop + 'px',
+      height:  $li[0].offsetHeight + 'px',
+      opacity: 1
+    });
+  };
+
   const updateActiveNav = (targetId) => {
+    let $activeLink = null;
+
     $navLinks.each(function() {
       const $link = $(this);
       if ($link.data('target') === targetId) {
         $link.removeClass('text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 border-transparent');
-        $link.addClass('bg-blue-600/10 text-blue-400 border-blue-500/20 shadow-sm');
+        $link.addClass('text-blue-400 active-tool');
+        $activeLink = $link;
       } else {
-        $link.removeClass('bg-blue-600/10 text-blue-400 border-blue-500/20 shadow-sm');
+        $link.removeClass('text-blue-400 active-tool bg-blue-600/10 border-blue-500/20 shadow-sm');
         $link.addClass('text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 border-transparent');
       }
     });
 
+    // Slide pill to the active nav item
+    if ($activeLink) {
+      movePillTo($activeLink.closest('li'));
+    }
+
+    // Animate the incoming tool section
     $toolSections.each(function() {
       const $section = $(this);
       if ($section.attr('id') === targetId) {
-        $section.removeClass('hidden');
+        $section.removeClass('entering hidden');
+        void $section[0].offsetWidth; // force reflow to re-trigger animation
+        $section.addClass('entering');
       } else {
-        $section.addClass('hidden');
+        $section.removeClass('entering').addClass('hidden');
       }
     });
   };
 
   $navLinks.on('click', function(e) {
     e.preventDefault();
-    const target = $(this).data('target');
-    updateActiveNav(target);
+    const $this = $(this);
+    // Icon pop-bounce on click
+    $this.addClass('icon-clicked');
+    setTimeout(() => $this.removeClass('icon-clicked'), 300);
+    updateActiveNav($this.data('target'));
   });
+
+  // Initialize: animate default section and position pill on Base64
+  updateActiveNav('base64-tool');
 
   // --- Base64 Tool Logic ---
   const $b64Plain = $('#base64-plain');
