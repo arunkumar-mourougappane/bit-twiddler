@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Bit Twiddler</title>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans flex h-screen overflow-hidden selection:bg-blue-500 selection:text-white">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-800 border-r border-gray-700 flex flex-col shadow-lg z-10">
+    <div class="px-6 py-5 border-b border-gray-700 bg-gray-800/50 backdrop-blur">
+      <h1 class="text-2xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-teal-400">
+        Bit Twiddler
+      </h1>
+      <p class="text-xs text-gray-500 mt-1 uppercase font-semibold tracking-wider">Developer Toolkit</p>
+    </div>
+    <nav class="flex-1 overflow-y-auto py-6">
+      <ul class="space-y-1.5 px-3" id="nav-list">
+        <li>
+          <a href="#" data-target="base64-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 bg-blue-600/10 text-blue-400 font-medium border border-blue-500/20 shadow-sm">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+              <span>Base64</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="hash-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <span>Hash Generator</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="epoch-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>Epoch Converter</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 bg-[#0f172a] p-6 overflow-y-auto relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Base64 Tool -->
+      <section id="base64-tool" class="tool-section animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Base64 Encode / Decode</h2>
+          <p class="text-gray-400">Instantly convert plain text to Base64 and vice versa.</p>
+        </header>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-80">
+          <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+            <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center">
+              <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Plain Text</label>
+              <button id="b64-copy-plain" class="text-xs text-gray-500 hover:text-white transition">Copy</button>
+            </div>
+            <textarea id="base64-plain" class="flex-1 bg-transparent p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-b-lg transition-all resize-none" placeholder="Type or paste plain text here..."></textarea>
+          </div>
+          <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+            <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center">
+              <label class="text-sm font-semibold text-indigo-300 uppercase tracking-wider">Base64 Encoded</label>
+              <button id="b64-copy-encoded" class="text-xs text-gray-500 hover:text-white transition">Copy</button>
+            </div>
+            <textarea id="base64-encoded" class="flex-1 bg-transparent p-3 text-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 rounded-b-lg transition-all resize-none font-mono text-sm" placeholder="Base64 output will appear here..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hash Generator Tool -->
+      <section id="hash-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Hash Generator</h2>
+          <p class="text-gray-400">Generate secure hashes in real-time using common algorithms.</p>
+        </header>
+        <div class="max-w-3xl">
+          <div class="mb-4">
+            <div class="bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+              <textarea id="hash-input" class="w-full h-24 bg-transparent p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg transition-all resize-none" placeholder="Enter data to hash..."></textarea>
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <!-- Hash Rows -->
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">MD5</span>
+              <input type="text" id="hash-md5" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="d41d8cd98f00b204e9800998ecf8427e">
+              <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-md5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">SHA-1</span>
+              <input type="text" id="hash-sha1" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="da39a3ee5e6b4b0d3255bfef95601890afd80709">
+              <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-sha1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">SHA-256</span>
+              <input type="text" id="hash-sha256" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+               <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-sha256"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">SHA-512</span>
+              <input type="text" id="hash-sha512" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e">
+              <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-sha512"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Epoch Converter Tool -->
+      <section id="epoch-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
+          <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
+        </header>
+        <div class="max-w-3xl flex flex-col gap-4">
+          
+          <!-- Timestamp to Date -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
+            <h3 class="text-xl font-semibold text-white mb-4">Timestamp ➔ Date</h3>
+            <div class="flex flex-col sm:flex-row sm:space-x-4 mb-4 space-y-4 sm:space-y-0">
+              <div class="relative flex-1">
+                <input type="number" id="epoch-input" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white text-base font-mono focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-shadow" placeholder="e.g. 1712718214">
+              </div>
+              <button id="epoch-current-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors font-medium shadow-lg shadow-blue-500/20 whitespace-nowrap">Now</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Local Time</label>
+                <div id="epoch-local-out" class="text-sm text-gray-200 font-medium h-5"></div>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">GMT (UTC)</label>
+                <div id="epoch-gmt-out" class="text-sm text-gray-200 font-medium h-5"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Date to Timestamp -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+            <h3 class="text-xl font-semibold text-white mb-4">Date ➔ Timestamp</h3>
+            <div class="flex flex-col mb-4">
+               <input type="datetime-local" id="date-input" step="1" class="w-full sm:w-2/3 bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-shadow text-sm">
+            </div>
+            
+            <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 inline-block min-w-[200px]">
+              <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Seconds</label>
+              <div id="date-timestamp-out" class="text-xl text-purple-400 font-mono font-bold h-6"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
