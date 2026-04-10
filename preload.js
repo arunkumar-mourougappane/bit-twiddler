@@ -8,5 +8,6 @@ contextBridge.exposeInMainWorld('api', {
     ipcRenderer.removeAllListeners('file-hash-update');
     ipcRenderer.on('file-hash-update', (event, hashes) => callback(hashes));
   },
-  generateQR: (text) => ipcRenderer.invoke('generate-qr', text)
+  generateQR: (text) => ipcRenderer.invoke('generate-qr', text),
+  renderMarkdown: (md) => ipcRenderer.invoke('render-markdown', md)
 });

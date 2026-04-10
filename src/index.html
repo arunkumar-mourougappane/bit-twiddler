@@ -107,6 +107,49 @@
           </a>
         </li>
       </ul>
+        <!-- Quick-Win Tools -->
+        <ul class="space-y-1.5 px-3 mt-0" id="nav-list-qw">
+        <li>
+          <a href="#" data-target="lorem-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12M4 18h8"></path></svg>
+              <span>Lorem Ipsum</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="inspect-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>String Inspector</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="password-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+              <span>Password Generator</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="markdown-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+              <span>Markdown Preview</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="unit-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+             <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
+              <span>Unit Converter</span>
+            </div>
+          </a>
+        </li>
+        </ul>
     </nav>
 
     <!-- Sidebar Footer: Theme Picker -->
@@ -633,6 +676,191 @@
         <div id="base-bit-viz" class="hidden bg-gray-900/50 rounded-xl border border-gray-700/50 p-5">
           <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Bit Representation</div>
           <div id="base-bits" class="font-mono text-sm tracking-widest leading-loose"></div>
+        </div>
+      </section>
+
+      <!-- ===== LOREM IPSUM GENERATOR ===== -->
+      <section id="lorem-tool" class="tool-section hidden">
+        <header class="mb-5">
+          <h2 class="text-3xl font-bold text-white mb-2">Lorem Ipsum Generator</h2>
+          <p class="text-gray-400">Generate professional placeholder text for mockups and designs.</p>
+        </header>
+        <div class="grid grid-cols-3 gap-4 mb-5">
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-3">Count</label>
+            <div class="flex items-center gap-3">
+              <input type="range" id="lorem-count" min="1" max="10" value="3" class="flex-1 accent-blue-500">
+              <span id="lorem-count-val" class="text-blue-400 font-mono font-bold w-5 text-center">3</span>
+            </div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Type</label>
+            <select id="lorem-type" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-sm text-gray-300 focus:outline-none focus:border-blue-500/50">
+              <option value="paragraphs">Paragraphs</option>
+              <option value="sentences">Sentences</option>
+              <option value="words">Words (×15)</option>
+            </select>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 flex items-center gap-3">
+            <button id="lorem-gen-btn" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors">Generate</button>
+            <button id="lorem-copy-btn" class="text-sm text-gray-400 hover:text-gray-200 font-semibold transition-colors px-3 py-2 bg-gray-800 rounded-lg hover:bg-gray-700">Copy</button>
+          </div>
+        </div>
+        <div class="bg-gray-900/50 rounded-xl border border-gray-700 p-5 min-h-52 overflow-y-auto max-h-80">
+          <div id="lorem-output" class="text-gray-300 text-sm leading-7 space-y-4"></div>
+        </div>
+      </section>
+
+      <!-- ===== STRING INSPECTOR ===== -->
+      <section id="inspect-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">String Inspector</h2>
+          <p class="text-gray-400">Analyze any text string and extract detailed statistics instantly.</p>
+        </header>
+        <textarea id="inspect-input" class="w-full h-32 bg-gray-800/60 border border-gray-700 focus:border-blue-500/60 rounded-xl px-4 py-3 font-mono text-sm text-gray-200 resize-none focus:outline-none mb-4 leading-relaxed transition-colors" spellcheck="false" placeholder="Paste or type any text to inspect..."></textarea>
+        <div class="grid grid-cols-4 gap-3 mb-3">
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-chars" class="text-2xl font-bold text-blue-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Characters</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-no-spaces" class="text-2xl font-bold text-blue-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">No Spaces</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-words" class="text-2xl font-bold text-violet-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Words</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-lines" class="text-2xl font-bold text-violet-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Lines</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-sentences" class="text-2xl font-bold text-emerald-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Sentences</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-bytes" class="text-2xl font-bold text-emerald-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bytes UTF-8</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-unique" class="text-2xl font-bold text-amber-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Unique Chars</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-avg-word" class="text-2xl font-bold text-amber-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Avg Word Len</div>
+          </div>
+        </div>
+        <div id="inspect-freq" class="hidden bg-gray-900/50 rounded-xl border border-gray-700/50 px-5 py-3 text-sm text-gray-400"></div>
+      </section>
+
+      <!-- ===== PASSWORD GENERATOR ===== -->
+      <section id="password-tool" class="tool-section hidden">
+        <header class="mb-5">
+          <h2 class="text-3xl font-bold text-white mb-2">Password Generator</h2>
+          <p class="text-gray-400">Generate cryptographically secure passwords using the Web Crypto API.</p>
+        </header>
+        <!-- Output -->
+        <div class="bg-gray-900/60 rounded-xl border border-gray-700 px-5 py-4 mb-4 flex items-center gap-4">
+          <div id="password-output" class="flex-1 font-mono text-lg text-green-300 break-all select-all min-h-7">—</div>
+          <div class="flex gap-2 flex-shrink-0">
+            <button id="password-copy" class="text-xs font-bold text-gray-400 hover:text-gray-200 bg-gray-800 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">Copy</button>
+            <button id="password-gen" class="text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              Generate
+            </button>
+          </div>
+        </div>
+        <!-- Strength meter -->
+        <div class="mb-5">
+          <div class="flex justify-between text-xs mb-1.5">
+            <span class="text-gray-500 font-semibold">Strength</span>
+            <span id="password-strength-label" class="font-bold text-gray-600">—</span>
+          </div>
+          <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+            <div id="password-strength-bar" class="h-full rounded-full transition-all duration-500" style="width:0%"></div>
+          </div>
+        </div>
+        <!-- Controls -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5">
+            <div class="flex justify-between items-center mb-3">
+              <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Length</label>
+              <span id="password-len-val" class="text-blue-400 font-mono font-bold">16</span>
+            </div>
+            <input type="range" id="password-length" min="4" max="128" value="16" class="w-full accent-blue-500">
+            <div class="flex justify-between text-[10px] text-gray-600 mt-1.5"><span>4</span><span>128</span></div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-3">Character Sets</label>
+            <div class="space-y-2">
+              <label class="flex items-center gap-2 cursor-pointer text-sm"><input type="checkbox" id="pw-upper" checked class="accent-blue-500"><span class="text-gray-300">Uppercase <span class="text-gray-600 font-mono text-xs">A–Z</span></span></label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm"><input type="checkbox" id="pw-lower" checked class="accent-blue-500"><span class="text-gray-300">Lowercase <span class="text-gray-600 font-mono text-xs">a–z</span></span></label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm"><input type="checkbox" id="pw-numbers" checked class="accent-blue-500"><span class="text-gray-300">Numbers <span class="text-gray-600 font-mono text-xs">0–9</span></span></label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm"><input type="checkbox" id="pw-symbols" class="accent-blue-500"><span class="text-gray-300">Symbols <span class="text-gray-600 font-mono text-xs">!@#$…</span></span></label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm"><input type="checkbox" id="pw-no-ambiguous" class="accent-blue-500"><span class="text-gray-300">Exclude ambiguous <span class="text-gray-600 font-mono text-xs">0Ol1I</span></span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MARKDOWN PREVIEWER ===== -->
+      <section id="markdown-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Markdown Previewer</h2>
+          <p class="text-gray-400">Write Markdown on the left and see the rendered preview instantly on the right.</p>
+        </header>
+        <div class="grid grid-cols-2 gap-4 h-[500px]">
+          <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Markdown</span>
+            </div>
+            <textarea id="markdown-input" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="# Hello World&#10;&#10;Write **bold**, _italic_, `code`, and more..."></textarea>
+          </div>
+          <div class="flex flex-col bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Preview</span>
+            </div>
+            <div id="markdown-preview" class="flex-1 p-5 overflow-y-auto md-preview text-sm"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== UNIT CONVERTER ===== -->
+      <section id="unit-tool" class="tool-section hidden">
+        <header class="mb-5">
+          <h2 class="text-3xl font-bold text-white mb-2">Unit Converter</h2>
+          <p class="text-gray-400">Convert data sizes and time durations across all common units.</p>
+        </header>
+        <!-- Data Size -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path></svg>
+            Data Size
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-data-input" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-blue-500/60 rounded-xl px-4 py-3 text-lg font-mono text-blue-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-data-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option>B</option><option>KB</option><option selected>MB</option><option>GB</option><option>TB</option><option>PB</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-2" id="unit-data-output"></div>
+        </div>
+        <div class="border-t border-gray-700/50 mb-5"></div>
+        <!-- Time Duration -->
+        <div>
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Time Duration
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-time-input" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-purple-500/60 rounded-xl px-4 py-3 text-lg font-mono text-purple-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-time-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option>ms</option><option selected>s</option><option>min</option><option>hr</option><option>day</option><option>week</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-2" id="unit-time-output"></div>
         </div>
       </section>
 

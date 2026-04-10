@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 const path = require('path');
 const crypto = require('crypto');
 const fs = require('fs');
+const { marked } = require('marked');
 
 let activeFileWatcher = null;
 let debounceTimer = null;
@@ -91,6 +92,8 @@ ipcMain.handle('stop-file-watch', () => {
         activeFileWatcher = null;
     }
 });
+
+ipcMain.handle('render-markdown', async (event, md) => marked.parse(md));
 
 let mainWindow = null;
 

@@ -1062,4 +1062,177 @@ $(document).ready(function() {
     setTimeout(() => $btn.text(orig), 1500);
   });
 
+  // ============================================================
+  // LOREM IPSUM GENERATOR
+  // ============================================================
+  const LOREM = ['lorem','ipsum','dolor','sit','amet','consectetur','adipiscing','elit','sed','do','eiusmod','tempor','incididunt','ut','labore','et','dolore','magna','aliqua','enim','ad','minim','veniam','quis','nostrud','exercitation','ullamco','laboris','nisi','aliquip','ex','ea','commodo','consequat','duis','aute','irure','in','reprehenderit','voluptate','velit','esse','cillum','eu','fugiat','nulla','pariatur','excepteur','sint','occaecat','cupidatat','non','proident','sunt','culpa','qui','officia','deserunt','mollit','anim','id','est','laborum'];
+  const rWord = () => LOREM[Math.floor(Math.random() * LOREM.length)];
+  const cap   = (s) => s[0].toUpperCase() + s.slice(1);
+
+  const genSentence = () => {
+    const n = Math.floor(Math.random() * 10) + 6;
+    const words = Array.from({ length: n }, rWord);
+    if (n > 8 && Math.random() > 0.5) words[Math.floor(n * 0.4)] += ',';
+    return cap(words.join(' ')) + '.';
+  };
+  const genParagraph = () => Array.from({ length: Math.floor(Math.random() * 3) + 4 }, genSentence).join(' ');
+
+  const generateLorem = () => {
+    const count = parseInt($('#lorem-count').val());
+    const type  = $('#lorem-type').val();
+    let html = '';
+    if (type === 'paragraphs') {
+      html = Array.from({ length: count }, (_, i) => {
+        const p = i === 0
+          ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' + Array.from({ length: 3 }, genSentence).join(' ')
+          : genParagraph();
+        return `<p>${p}</p>`;
+      }).join('');
+    } else if (type === 'sentences') {
+      html = `<p>${Array.from({ length: count }, genSentence).join(' ')}</p>`;
+    } else {
+      // words: count × 15
+      const words = Array.from({ length: count * 15 }, rWord);
+      html = `<p>${cap(words.join(' '))}.</p>`;
+    }
+    $('#lorem-output').html(html);
+  };
+
+  $('#lorem-count').on('input', function() { $('#lorem-count-val').text($(this).val()); generateLorem(); });
+  $('#lorem-type').on('change', generateLorem);
+  $('#lorem-gen-btn').on('click', generateLorem);
+  $('#lorem-copy-btn').on('click', function() {
+    navigator.clipboard.writeText($('#lorem-output').text());
+    $(this).text('Copied!');
+    setTimeout(() => $(this).text('Copy'), 1500);
+  });
+  generateLorem();
+
+  // ============================================================
+  // STRING INSPECTOR
+  // ============================================================
+  const inspectString = () => {
+    const text  = $('#inspect-input').val();
+    const words = text.trim() ? text.trim().split(/\s+/) : [];
+    const bytes = new TextEncoder().encode(text).length;
+
+    $('#inspect-chars').text(text.length.toLocaleString());
+    $('#inspect-no-spaces').text(text.replace(/\s/g, '').length.toLocaleString());
+    $('#inspect-words').text(words.length.toLocaleString());
+    $('#inspect-lines').text((text.split('\n').length).toLocaleString());
+    $('#inspect-sentences').text((text.split(/[.!?]+\s+/).filter(Boolean).length).toLocaleString());
+    $('#inspect-bytes').text(bytes.toLocaleString());
+    $('#inspect-unique').text(new Set(text).size.toLocaleString());
+    $('#inspect-avg-word').text(words.length ? (words.join('').length / words.length).toFixed(1) : '0');
+
+    if (text) {
+      const freq = {};
+      for (const c of text) if (c.trim()) freq[c] = (freq[c] || 0) + 1;
+      const top = Object.entries(freq).sort((a, b) => b[1] - a[1])[0];
+      if (top) {
+        const [ch, cnt] = top;
+        const safeChar = ch === '<' ? '&lt;' : ch === '>' ? '&gt;' : ch;
+        $('#inspect-freq').removeClass('hidden').html(
+          `Most frequent: <strong class="text-blue-300 font-mono">${safeChar}</strong> &mdash; appears <strong class="text-blue-300">${cnt}</strong> time${cnt !== 1 ? 's' : ''}`
+        );
+      }
+    } else {
+      $('#inspect-freq').addClass('hidden');
+    }
+  };
+  $('#inspect-input').on('input', inspectString);
+
+  // ============================================================
+  // PASSWORD GENERATOR
+  // ============================================================
+  const generatePassword = () => {
+    const length = parseInt($('#password-length').val());
+    let charset = '';
+    if ($('#pw-upper').is(':checked'))   charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if ($('#pw-lower').is(':checked'))   charset += 'abcdefghijklmnopqrstuvwxyz';
+    if ($('#pw-numbers').is(':checked')) charset += '0123456789';
+    if ($('#pw-symbols').is(':checked')) charset += '!@#$%^&*()-_=+[]{}|;:,.<>?';
+    if ($('#pw-no-ambiguous').is(':checked')) charset = charset.replace(/[0Ol1IB8]/g, '');
+
+    if (!charset) { $('#password-output').text('Select at least one character set'); return; }
+
+    const arr = new Uint32Array(length);
+    window.crypto.getRandomValues(arr);
+    const pwd = Array.from(arr, n => charset[n % charset.length]).join('');
+    $('#password-output').text(pwd);
+
+    // Entropy-based strength
+    const entropy = length * Math.log2(charset.length);
+    const [label, color, width] = entropy < 40 ? ['Weak',        '#ef4444', '18%']
+                                : entropy < 60 ? ['Fair',        '#f97316', '45%']
+                                : entropy < 80 ? ['Strong',      '#22c55e', '72%']
+                                :                ['Very Strong', '#10b981', '100%'];
+    $('#password-strength-label').text(label).css('color', color);
+    $('#password-strength-bar').css({ width, 'background-color': color });
+  };
+
+  $('#password-length').on('input', function() { $('#password-len-val').text($(this).val()); generatePassword(); });
+  $('#pw-upper, #pw-lower, #pw-numbers, #pw-symbols, #pw-no-ambiguous').on('change', generatePassword);
+  $('#password-gen').on('click', generatePassword);
+  $('#password-copy').on('click', function() {
+    const pwd = $('#password-output').text();
+    if (!pwd || pwd === '—') return;
+    navigator.clipboard.writeText(pwd);
+    $(this).text('Copied!');
+    setTimeout(() => $(this).text('Copy'), 1500);
+  });
+  generatePassword();
+
+  // ============================================================
+  // MARKDOWN PREVIEWER (via IPC → marked in main process)
+  // ============================================================
+  let mdDebounce = null;
+  $('#markdown-input').on('input', function() {
+    clearTimeout(mdDebounce);
+    mdDebounce = setTimeout(async () => {
+      const md = $(this).val();
+      if (!md.trim()) { $('#markdown-preview').html(''); return; }
+      try {
+        const html = await window.api.renderMarkdown(md);
+        $('#markdown-preview').html(html);
+      } catch(e) { console.error('Markdown render error:', e); }
+    }, 120);
+  });
+
+  // ============================================================
+  // UNIT CONVERTER — Data Size & Time Duration
+  // ============================================================
+  const DATA_UNITS    = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+  const DATA_FACTORS  = [1, 1024, 1024**2, 1024**3, 1024**4, 1024**5];
+  const TIME_UNITS    = ['ms', 's', 'min', 'hr', 'day', 'week'];
+  const TIME_FACTORS  = [1, 1e3, 6e4, 3.6e6, 86400e3, 604800e3]; // all in ms
+
+  const fmtNum = (n) => {
+    if (!isFinite(n) || isNaN(n)) return '—';
+    if (n === 0) return '0';
+    if (Math.abs(n) >= 1e15 || (Math.abs(n) < 0.0001 && n !== 0)) return n.toExponential(3);
+    return parseFloat(n.toPrecision(9)).toLocaleString('en-US', { maximumFractionDigits: 6 });
+  };
+
+  const renderUnitCards = (containerId, rawVal, fromUnit, units, factors, accentClass) => {
+    const fromIdx = units.indexOf(fromUnit);
+    if (fromIdx < 0 || isNaN(rawVal)) { $(`#${containerId}`).html(''); return; }
+    const base = rawVal * factors[fromIdx];
+    $(`#${containerId}`).html(units.map((u, i) => {
+      const val = base / factors[i];
+      const active = u === fromUnit ? 'border-blue-500/30 bg-blue-600/5' : '';
+      return `<div class="bg-gray-800/40 border border-gray-700/50 hover:border-blue-500/20 rounded-xl px-4 py-3 transition-colors ${active}">
+        <div class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-1">${u}</div>
+        <div class="font-mono text-sm text-gray-200 break-all">${fmtNum(val)}</div>
+      </div>`;
+    }).join(''));
+  };
+
+  $('#unit-data-input, #unit-data-from').on('input change', function() {
+    renderUnitCards('unit-data-output', parseFloat($('#unit-data-input').val()), $('#unit-data-from').val(), DATA_UNITS, DATA_FACTORS, 'blue');
+  });
+  $('#unit-time-input, #unit-time-from').on('input change', function() {
+    renderUnitCards('unit-time-output', parseFloat($('#unit-time-input').val()), $('#unit-time-from').val(), TIME_UNITS, TIME_FACTORS, 'purple');
+  });
+
 });
