@@ -170,8 +170,8 @@
   </aside>
 
   <!-- Main Content -->
-  <main class="flex-1 bg-[#0f172a] p-6 overflow-y-auto relative">
-    <div class="max-w-5xl mx-auto">
+  <main class="flex-1 bg-[#0f172a] p-6 lg:p-10 overflow-y-auto relative">
+    <div class="w-full max-w-[1536px] mx-auto transition-all duration-300">
       
       <!-- ===== NUMBER BASE CONVERTER ===== -->
       <section id="base-tool" class="tool-section hidden">
@@ -237,7 +237,7 @@
           <h2 class="text-3xl font-bold text-white mb-2">Base64 Encode / Decode</h2>
           <p class="text-gray-400">Instantly convert plain text to Base64 and vice versa.</p>
         </header>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-80">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-80 lg:h-[480px] transition-all">
           <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
             <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center">
               <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Plain Text</label>
@@ -306,7 +306,7 @@
         </header>
 
         <!-- Input pair -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-44 mb-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-44 lg:h-72 mb-4 transition-all">
           <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
             <div class="px-4 py-2 border-b border-gray-800 bg-gray-800/40 flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-red-500 flex-shrink-0"></span>
@@ -329,7 +329,7 @@
             <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Diff Output</span>
             <div id="diff-stats" class="flex gap-4 text-xs font-semibold"></div>
           </div>
-          <div id="diff-output" class="font-mono text-xs leading-6 overflow-y-auto max-h-72">
+          <div id="diff-output" class="font-mono text-xs leading-6 overflow-y-auto max-h-72 lg:max-h-[600px] transition-all">
             <div class="p-4 text-gray-600 italic">Paste text in both fields above to see the diff...</div>
           </div>
         </div>
@@ -341,7 +341,7 @@
           <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
           <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
         </header>
-        <div class="max-w-3xl flex flex-col gap-4">
+        <div class="w-full flex flex-col gap-6">
           
           <!-- Timestamp to Date -->
           <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
@@ -389,7 +389,7 @@
           <h2 class="text-3xl font-bold text-white mb-2">Hash Generator</h2>
           <p class="text-gray-400">Generate secure hashes in real-time using common algorithms.</p>
         </header>
-        <div class="max-w-3xl">
+        <div class="w-full">
           <div class="mb-6 flex space-x-4 border-b border-gray-800 pb-2">
              <button class="hash-tab-btn active text-blue-400 font-bold border-b-2 border-blue-500 px-1 pb-1 transition-colors" data-view="hash-text-view">Text Hash</button>
              <button class="hash-tab-btn text-gray-500 font-bold border-b-2 border-transparent hover:text-gray-300 px-1 pb-1 transition-colors" data-view="hash-file-view">File Hash</button>
@@ -494,7 +494,7 @@
           <p class="text-gray-400">Validate, format, and structure JSON intelligently.</p>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[600px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[600px] lg:h-[700px] xl:h-[800px] transition-all">
           <!-- Left Layout: Input -->
           <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
             <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center bg-gray-800/40 rounded-t-lg">
@@ -545,7 +545,7 @@
           <p class="text-gray-400">Decode JSON Web Tokens instantly and analyze structured payloads.</p>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[600px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[600px] lg:h-[750px] transition-all">
           <!-- Left Layout: Input -->
           <div class="flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
             <div class="px-3 py-2 border-b border-gray-800 flex justify-between items-center bg-gray-800/40 rounded-t-lg">
@@ -626,7 +626,7 @@
           <h2 class="text-3xl font-bold text-white mb-2">Markdown Previewer</h2>
           <p class="text-gray-400">Write Markdown on the left and see the rendered preview instantly on the right.</p>
         </header>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[500px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[500px] lg:h-[700px] transition-all">
           <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
             <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
               <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Markdown</span>
@@ -699,7 +699,7 @@
           <p class="text-gray-400">Instantly generate high-resolution QR codes dynamically from structured payloads.</p>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[500px]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[500px] lg:h-[620px] transition-all">
           <!-- Left Layout: Input -->
           <div class="lg:col-span-6 flex flex-col bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
              <div class="px-4 py-3 border-b border-gray-800 bg-gray-800/40 rounded-t-xl flex items-center justify-between">
@@ -748,7 +748,7 @@
         </div>
 
         <!-- Split view -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[360px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[360px] lg:h-[500px] transition-all">
           <!-- Left: editable test input -->
           <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
             <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40 flex items-center justify-between">

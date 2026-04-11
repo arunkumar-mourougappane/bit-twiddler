@@ -45,7 +45,7 @@
          if ($hashFileInput[0].files.length === 0) {
              clearHashes();
          } else {
-             triggerFileHash($hashFileInput[0].files[0].path);
+             triggerFileHash(window.api.getPathForFile($hashFileInput[0].files[0]));
          }
       }
   });
@@ -96,7 +96,7 @@
       if (e.target.files.length > 0) {
          const file = e.target.files[0];
          $hashFileName.text(file.name);
-         triggerFileHash(file.path);
+         triggerFileHash(window.api.getPathForFile(file));
       } else {
          $hashFileName.text('');
          clearHashes();

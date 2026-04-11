@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron');
+const { contextBridge, ipcRenderer, webUtils } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
   generateHashes: (text) => ipcRenderer.invoke('generate-hashes', text),
@@ -9,5 +9,6 @@ contextBridge.exposeInMainWorld('api', {
     ipcRenderer.on('file-hash-update', (event, hashes) => callback(hashes));
   },
   generateQR: (text) => ipcRenderer.invoke('generate-qr', text),
-  renderMarkdown: (md) => ipcRenderer.invoke('render-markdown', md)
+  renderMarkdown: (md) => ipcRenderer.invoke('render-markdown', md),
+  getPathForFile: (file) => webUtils.getPathForFile(file)
 });
