@@ -23,7 +23,7 @@
     "electron": "^39.8.5",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^26.8.1"
   },
   "dependencies": {
     "jquery": "^4.0.0",
