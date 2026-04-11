@@ -1,0 +1,42 @@
+<!-- ===== REGEX TESTER ===== -->
+      <section id="regex-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Regex Tester</h2>
+          <p class="text-gray-400">Write, test and debug regular expressions with live match highlighting.</p>
+        </header>
+
+        <!-- Pattern Bar -->
+        <div class="flex items-center gap-2 bg-gray-800/60 border border-gray-700 hover:border-violet-500/40 rounded-xl px-4 py-3 mb-4 transition-colors">
+          <span class="text-violet-400 font-mono text-xl font-bold select-none">/</span>
+          <input id="regex-pattern" type="text" spellcheck="false" placeholder="([A-Z])\w+" class="flex-1 bg-transparent font-mono text-sm text-violet-300 focus:outline-none placeholder:text-gray-600">
+          <span class="text-violet-400 font-mono text-xl font-bold select-none">/</span>
+          <!-- Flag toggles -->
+          <div class="flex items-center gap-2 ml-2 border-l border-gray-700 pl-3">
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-g" checked class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">g</span></label>
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-i" class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">i</span></label>
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-m" class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">m</span></label>
+            <label class="cursor-pointer"><input type="checkbox" id="rflag-s" class="sr-only peer"><span class="w-7 h-7 flex items-center justify-center rounded-md bg-gray-900 border border-gray-700 font-mono text-xs font-bold text-gray-500 peer-checked:bg-violet-600/20 peer-checked:border-violet-500/50 peer-checked:text-violet-300 transition-all select-none">s</span></label>
+          </div>
+          <div id="regex-status" class="ml-3 text-xs font-semibold"></div>
+        </div>
+
+        <!-- Split view -->
+        <div class="grid grid-cols-2 gap-4 h-[360px]">
+          <!-- Left: editable test input -->
+          <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40 flex items-center justify-between">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Test String</span>
+              <span id="regex-match-count" class="text-xs font-semibold text-violet-400"></span>
+            </div>
+            <textarea id="regex-input" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="Paste text to test against..."></textarea>
+          </div>
+          <!-- Right: highlighted output + match list -->
+          <div class="flex flex-col bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Match Highlights</span>
+            </div>
+            <div id="regex-highlight" class="flex-1 p-4 font-mono text-sm leading-relaxed overflow-y-auto whitespace-pre-wrap break-all text-gray-400"></div>
+            <div id="regex-match-list" class="border-t border-gray-800 max-h-32 overflow-y-auto space-y-1 p-2"></div>
+          </div>
+        </div>
+      </section>

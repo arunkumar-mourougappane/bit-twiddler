@@ -1,0 +1,42 @@
+<!-- Color Converter Tool -->
+      <section id="color-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Color Converter</h2>
+          <p class="text-gray-400">Translate hex structures into dynamic web-safe coordinates perfectly.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[500px]">
+          <!-- Left Layout: Input -->
+          <div class="lg:col-span-4 flex flex-col justify-center bg-gray-800/30 p-8 rounded-xl border border-gray-800 shadow-inner">
+             <div class="mb-4">
+               <label class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2 text-center">Enter Hex</label>
+               <input id="color-input" type="text" class="w-full bg-gray-900 border-2 border-gray-700/80 hover:border-gray-600 focus:border-blue-500 rounded-lg px-4 py-3 text-2xl font-mono text-center text-white focus:outline-none transition-colors" placeholder="#FF5733" spellcheck="false" autocomplete="off">
+               <p id="color-error" class="hidden text-red-500/80 text-[11px] font-bold uppercase tracking-widest mt-3 text-center transition-all animate-pulse">Invalid Hex Format</p>
+             </div>
+          </div>
+
+          <!-- Right Layout: Output Layout -->
+          <div class="lg:col-span-8 flex flex-col space-y-4">
+             <div id="color-swatch" class="w-full h-32 rounded-2xl bg-gray-800/50 shadow-xl border border-gray-700/50 transition-colors duration-200"></div>
+             
+             <div class="grid grid-cols-2 gap-4 flex-1">
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-gray-500 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">HEX</label>
+                   <span id="color-out-hex" class="font-mono text-lg text-gray-300"></span>
+                </div>
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-blue-500/50 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">RGB</label>
+                   <span id="color-out-rgb" class="font-mono text-lg text-blue-300"></span>
+                </div>
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-purple-500/50 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">HSL</label>
+                   <span id="color-out-hsl" class="font-mono text-lg text-purple-300"></span>
+                </div>
+                <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-700/50 shadow-inner flex flex-col justify-center items-center group hover:border-pink-500/50 transition-colors relative">
+                   <label class="absolute top-3 left-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">CMYK</label>
+                   <span id="color-out-cmyk" class="font-mono text-lg text-pink-300"></span>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>

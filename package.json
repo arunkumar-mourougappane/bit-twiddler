@@ -4,10 +4,12 @@
   "description": "A swiss army developer toolkit",
   "main": "main.js",
   "scripts": {
+    "build:html": "node build-html.js",
     "build:css": "npx tailwindcss -i ./src/input.css -o ./src/styles.css",
-    "start": "npm run build:css && electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "build:all": "npm run build:html && npm run build:css",
+    "start": "npm run build:all && electron .",
+    "pack": "npm run build:all && electron-builder --dir",
+    "dist": "npm run build:all && electron-builder"
   },
   "repository": {
     "type": "git",

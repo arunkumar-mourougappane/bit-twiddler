@@ -1,0 +1,59 @@
+<!-- Hash Generator Tool -->
+      <section id="hash-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Hash Generator</h2>
+          <p class="text-gray-400">Generate secure hashes in real-time using common algorithms.</p>
+        </header>
+        <div class="max-w-3xl">
+          <div class="mb-6 flex space-x-4 border-b border-gray-800 pb-2">
+             <button class="hash-tab-btn active text-blue-400 font-bold border-b-2 border-blue-500 px-1 pb-1 transition-colors" data-view="hash-text-view">Text Hash</button>
+             <button class="hash-tab-btn text-gray-500 font-bold border-b-2 border-transparent hover:text-gray-300 px-1 pb-1 transition-colors" data-view="hash-file-view">File Hash</button>
+          </div>
+
+          <div id="hash-text-view" class="mb-4 hash-view">
+            <div class="bg-gray-800/30 p-1 rounded-xl border border-gray-800 shadow-inner">
+              <textarea id="hash-input" class="w-full h-24 bg-transparent p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg transition-all resize-none" placeholder="Enter data to hash..."></textarea>
+            </div>
+          </div>
+
+          <div id="hash-file-view" class="mb-4 hash-view hidden">
+            <div class="bg-gray-800/30 rounded-xl border-2 border-dashed border-gray-700 hover:border-blue-500/50 transition-colors p-6 flex flex-col items-center justify-center relative shadow-inner group">
+              <input type="file" id="hash-file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+              <svg class="w-8 h-8 text-gray-500 mb-3 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+              <p class="text-gray-300 font-medium mb-1 group-hover:text-white transition-colors"><span class="text-blue-400">Click to upload file</span> or drag and drop</p>
+              <p id="hash-file-name" class="text-xs text-gray-500 mt-1 truncate max-w-full px-4 text-center"></p>
+            </div>
+            <div id="hash-file-live-indicator" class="hidden mt-3 flex items-center space-x-2 text-xs font-semibold text-green-400 opacity-80 pl-2">
+               <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+               </span>
+               <span class="uppercase tracking-widest text-[10px]">Live watching</span>
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <!-- Hash Rows -->
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">MD5</span>
+              <input type="text" id="hash-md5" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="d41d8cd98f00b204e9800998ecf8427e">
+              <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-md5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">SHA-1</span>
+              <input type="text" id="hash-sha1" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="da39a3ee5e6b4b0d3255bfef95601890afd80709">
+              <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-sha1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">SHA-256</span>
+              <input type="text" id="hash-sha256" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+               <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-sha256"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+            <div class="bg-gray-800/40 rounded-xl border border-gray-700/50 p-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 hover:border-gray-600 transition-colors">
+              <span class="w-24 text-sm font-bold text-gray-400 uppercase tracking-widest">SHA-512</span>
+              <input type="text" id="hash-sha512" readonly class="flex-1 bg-transparent text-teal-400 font-mono text-sm focus:outline-none cursor-copy truncate" value="cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e">
+              <button class="copy-hash-btn text-gray-500 hover:text-white transition p-1 rounded hover:bg-gray-700" data-target="hash-sha512"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>

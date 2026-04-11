@@ -1,0 +1,36 @@
+<!-- ===== UNIT CONVERTER ===== -->
+      <section id="unit-tool" class="tool-section hidden">
+        <header class="mb-5">
+          <h2 class="text-3xl font-bold text-white mb-2">Unit Converter</h2>
+          <p class="text-gray-400">Convert data sizes and time durations across all common units.</p>
+        </header>
+        <!-- Data Size -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path></svg>
+            Data Size
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-data-input" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-blue-500/60 rounded-xl px-4 py-3 text-lg font-mono text-blue-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-data-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option>B</option><option>KB</option><option selected>MB</option><option>GB</option><option>TB</option><option>PB</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-2" id="unit-data-output"></div>
+        </div>
+        <div class="border-t border-gray-700/50 mb-5"></div>
+        <!-- Time Duration -->
+        <div>
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Time Duration
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-time-input" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-purple-500/60 rounded-xl px-4 py-3 text-lg font-mono text-purple-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-time-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option>ms</option><option selected>s</option><option>min</option><option>hr</option><option>day</option><option>week</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-2" id="unit-time-output"></div>
+        </div>
+      </section>

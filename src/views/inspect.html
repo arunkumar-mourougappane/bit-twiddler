@@ -1,0 +1,43 @@
+<!-- ===== STRING INSPECTOR ===== -->
+      <section id="inspect-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">String Inspector</h2>
+          <p class="text-gray-400">Analyze any text string and extract detailed statistics instantly.</p>
+        </header>
+        <textarea id="inspect-input" class="w-full h-32 bg-gray-800/60 border border-gray-700 focus:border-blue-500/60 rounded-xl px-4 py-3 font-mono text-sm text-gray-200 resize-none focus:outline-none mb-4 leading-relaxed transition-colors" spellcheck="false" placeholder="Paste or type any text to inspect..."></textarea>
+        <div class="grid grid-cols-4 gap-3 mb-3">
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-chars" class="text-2xl font-bold text-blue-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Characters</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-no-spaces" class="text-2xl font-bold text-blue-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">No Spaces</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-words" class="text-2xl font-bold text-violet-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Words</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-lines" class="text-2xl font-bold text-violet-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Lines</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-sentences" class="text-2xl font-bold text-emerald-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Sentences</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-bytes" class="text-2xl font-bold text-emerald-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bytes UTF-8</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-unique" class="text-2xl font-bold text-amber-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Unique Chars</div>
+          </div>
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 text-center">
+            <div id="inspect-avg-word" class="text-2xl font-bold text-amber-400 font-mono mb-1">0</div>
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Avg Word Len</div>
+          </div>
+        </div>
+        <div id="inspect-freq" class="hidden bg-gray-900/50 rounded-xl border border-gray-700/50 px-5 py-3 text-sm text-gray-400"></div>
+      </section>

@@ -1,0 +1,47 @@
+<!-- Epoch Converter Tool -->
+      <section id="epoch-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
+          <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
+        </header>
+        <div class="max-w-3xl flex flex-col gap-4">
+          
+          <!-- Timestamp to Date -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
+            <h3 class="text-xl font-semibold text-white mb-4">Timestamp ➔ Date</h3>
+            <div class="flex flex-col sm:flex-row sm:space-x-4 mb-4 space-y-4 sm:space-y-0">
+              <div class="relative flex-1">
+                <input type="number" id="epoch-input" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white text-base font-mono focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-shadow" placeholder="e.g. 1712718214">
+              </div>
+              <button id="epoch-current-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors font-medium shadow-lg shadow-blue-500/20 whitespace-nowrap">Now</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Local Time</label>
+                <div id="epoch-local-out" class="text-sm text-gray-200 font-medium h-5"></div>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">GMT (UTC)</label>
+                <div id="epoch-gmt-out" class="text-sm text-gray-200 font-medium h-5"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Date to Timestamp -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+            <h3 class="text-xl font-semibold text-white mb-4">Date ➔ Timestamp</h3>
+            <div class="flex flex-col mb-4">
+               <input type="datetime-local" id="date-input" step="1" class="w-full sm:w-2/3 bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-shadow text-sm">
+            </div>
+            
+            <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 inline-block min-w-[200px]">
+              <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Seconds</label>
+              <div id="date-timestamp-out" class="text-xl text-purple-400 font-mono font-bold h-6"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>

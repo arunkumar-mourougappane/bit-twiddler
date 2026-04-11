@@ -1,0 +1,21 @@
+<!-- ===== MARKDOWN PREVIEWER ===== -->
+      <section id="markdown-tool" class="tool-section hidden">
+        <header class="mb-4">
+          <h2 class="text-3xl font-bold text-white mb-2">Markdown Previewer</h2>
+          <p class="text-gray-400">Write Markdown on the left and see the rendered preview instantly on the right.</p>
+        </header>
+        <div class="grid grid-cols-2 gap-4 h-[500px]">
+          <div class="flex flex-col bg-gray-800/30 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Markdown</span>
+            </div>
+            <textarea id="markdown-input" class="flex-1 w-full bg-transparent p-4 font-mono text-sm text-gray-200 resize-none focus:outline-none leading-relaxed" spellcheck="false" placeholder="# Hello World&#10;&#10;Write **bold**, _italic_, `code`, and more..."></textarea>
+          </div>
+          <div class="flex flex-col bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden">
+            <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Preview</span>
+            </div>
+            <div id="markdown-preview" class="flex-1 p-5 overflow-y-auto md-preview text-sm"></div>
+          </div>
+        </div>
+      </section>
