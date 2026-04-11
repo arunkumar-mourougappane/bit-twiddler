@@ -2,6 +2,13 @@
 
 > **A Swiss-Army Developer Toolkit — offline-first, privacy-respecting, and blazingly fast.**
 
+[![CI](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/ci.yml/badge.svg)](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/ci.yml)
+[![Release](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/release.yml/badge.svg)](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/release.yml)
+[![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/arunkumar-mourougappane/bit-twiddler/blob/main/.github/dependabot.yml)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![Electron](https://img.shields.io/badge/Electron-v39-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+
 Bit Twiddler is a native desktop application built with **Electron** that gives developers instant, secure access to everyday utility tasks — encoding, hashing, formatting, decoding, converting, and more. Everything runs **100% locally**; no network requests, no telemetry.
 
 ---
