@@ -1,6 +1,6 @@
   // KEYBOARD SHORTCUTS — Cmd/Ctrl + 1–9 to jump to tools
   // ============================================================
-  window.window.navTargets = $navLinks.map(function() { return $(this).data('target'); }).get();
+  window.navTargets = window.$navLinks.map(function() { return $(this).data('target'); }).get();
 
   $(document).on('keydown', function(e) {
     if ((e.metaKey || e.ctrlKey) && !e.shiftKey && !e.altKey) {

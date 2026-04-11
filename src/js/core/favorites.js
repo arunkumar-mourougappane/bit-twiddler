@@ -1,9 +1,9 @@
   // FAVORITES — pin tools to the top of the sidebar
   // ============================================================
-  window.window.toolOrder = [...window.navTargets]; // capture DOM order before any reordering
+  window.toolOrder = [...window.navTargets]; // capture DOM order before any reordering
 
   // Inject star buttons into every nav link dynamically
-  $navLinks.each(function() {
+  window.$navLinks.each(function() {
     const target = $(this).data('target');
     $(this).find('div').first()
       .removeClass('space-x-3')
@@ -52,7 +52,7 @@
     // Re-attach pill and reposition it under active link
     $ul.append($pillEl);
     const $active = $('.nav-link.active-tool');
-    if ($active.length) movePillTo($active.closest('li'));
+    if ($active.length) window.movePillTo($active.closest('li'));
   };
 
   applyFavoritesOrder(); // apply on load (restores persisted favorites)
