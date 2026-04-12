@@ -2,6 +2,7 @@
 
 > **A Swiss-Army Developer Toolkit — offline-first, privacy-respecting, and blazingly fast.**
 
+[![GitHub Release](https://img.shields.io/github/v/release/arunkumar-mourougappane/bit-twiddler?label=release)](https://github.com/arunkumar-mourougappane/bit-twiddler/releases/latest)
 [![CI](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/ci.yml/badge.svg)](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/ci.yml)
 [![Release](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/release.yml/badge.svg)](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/release.yml)
 [![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/arunkumar-mourougappane/bit-twiddler/blob/main/.github/dependabot.yml)
