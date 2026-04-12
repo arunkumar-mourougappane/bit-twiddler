@@ -5,7 +5,7 @@
 [![CI](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/ci.yml/badge.svg)](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/ci.yml)
 [![Release](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/release.yml/badge.svg)](https://github.com/arunkumar-mourougappane/bit-twiddler/actions/workflows/release.yml)
 [![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/arunkumar-mourougappane/bit-twiddler/blob/main/.github/dependabot.yml)
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT + Commercial](https://img.shields.io/badge/License-MIT%20%2B%20Commercial-blue.svg)](./LICENSE)
 [![Electron](https://img.shields.io/badge/Electron-v41-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 
@@ -478,4 +478,7 @@ This builds the HTML, CSS, and JS, then launches the Electron window.
 
 ## License
 
-ISC License — see [`LICENSE`](./LICENSE) for details.
+Dual licensed — see [`LICENSE`](./LICENSE) for details.
+
+- **MIT License** — free for personal, academic, and open-source (non-commercial) use
+- **Commercial License** — required for any revenue-generating or commercial use; contact [Arunkumar Mourougappane](https://github.com/arunkumar-mourougappane) to obtain one
