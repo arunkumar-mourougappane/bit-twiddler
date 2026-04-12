@@ -29,7 +29,6 @@ Bit Twiddler is a native desktop application built with **Electron** that gives 
 - [Architecture](#architecture)
 - [Build System](#build-system)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [License](#license)
 
 ---
@@ -474,41 +473,6 @@ npm start
 ```
 
 This builds the HTML, CSS, and JS, then launches the Electron window.
-
----
-
-## Project Structure
-
-```
-bit-twiddler/
-├── main.js                     # Main process: window lifecycle + IPC handler registration
-├── preload.js                  # contextBridge: exposes window.api to renderer
-├── build-html.js               # Build script: stitches views/*.html into index.html
-├── package.json
-├── tailwind.config.js
-├── src-main/
-│   ├── menu.js                 # Application menu
-│   └── ipc/
-│       ├── crypto-handlers.js  # IPC: text/file hashing
-│       └── qr-handlers.js      # IPC: QR code generation
-└── src/
-    ├── index.tpl.html          # App shell template (sidebar + layout)
-    ├── index.html              # Generated — do not edit directly
-    ├── input.css               # Tailwind source + custom animations
-    ├── styles.css              # Generated — compiled Tailwind output
-    ├── renderer.js             # Entry point: imports all tool modules
-    ├── bundle.js               # Generated — esbuild output
-    ├── views/                  # One HTML partial per tool (40+ files)
-    └── js/
-        ├── utils.js            # Shared helpers (clipboard, HTML escape)
-        ├── sidebar-logic.js    # Accordion, search, localStorage persistence
-        └── core/
-        │   ├── navigation.js   # Tool switching + animated pill indicator
-        │   ├── shortcuts.js    # Keyboard shortcuts (⌘1–9)
-        │   ├── favorites.js    # Pin/unpin tools, persist to localStorage
-        │   └── theme.js        # Accent theme picker
-        └── tools/              # One JS module per tool (40+ files)
-```
 
 ---
 
