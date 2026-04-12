@@ -1,0 +1,94 @@
+<!-- Voltage Divider Tool -->
+      <section id="divider-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Circuits & Ohm's Law</h2>
+          <p class="text-gray-400">Calculate voltage dividers and basic circuit parameters.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl">
+          <!-- Voltage Divider Card -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col">
+             <div class="flex justify-between items-center mb-6">
+                <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-none">Voltage Divider Solver</h3>
+                <span class="text-[9px] text-gray-600 bg-gray-900 px-2 py-0.5 rounded border border-gray-800">Vout = Vin * (R2 / (R1 + R2))</span>
+             </div>
+
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-1">
+                <!-- Inputs -->
+                <div class="space-y-4">
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Input Voltage (Vin)</label>
+                      <input type="number" id="div-vin" value="5" step="0.1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-emerald-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">V</span>
+                   </div>
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Resistor 1 (R1)</label>
+                      <input type="number" id="div-r1" value="1000" step="1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-blue-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">Ω</span>
+                   </div>
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Resistor 2 (R2)</label>
+                      <input type="number" id="div-r2" value="1000" step="1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-blue-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">Ω</span>
+                   </div>
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-rose-500/80 uppercase mb-2">Output Voltage (Vout)</label>
+                      <input type="number" id="div-vout" value="2.5" step="0.1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-rose-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">V</span>
+                   </div>
+                </div>
+
+                <!-- Schematic Representation -->
+                <div class="flex justify-center">
+                   <div class="relative w-48 h-64 border-l-2 border-gray-700/50 flex flex-col items-start px-6 justify-between py-2">
+                      <div class="absolute -left-1 top-0 w-2 h-2 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.5)]"></div>
+                      <div class="absolute -left-1 bottom-0 w-2 h-2 bg-gray-600 rounded-full"></div>
+                      
+                      <div class="text-[10px] text-gray-500 font-bold uppercase">VIN</div>
+                      <div class="w-full h-12 bg-gray-800 border-2 border-gray-700 rounded-lg flex items-center justify-center text-xs font-mono text-blue-300">R1</div>
+                      <div class="w-full h-0.5 bg-gray-700 relative">
+                         <div class="absolute right-0 -top-1 w-2 h-2 bg-rose-400 rounded-full shadow-[0_0_8px_rgba(251,113,133,0.5)]"></div>
+                         <div class="absolute -right-12 -top-2 text-[10px] text-rose-400 font-bold">VOUT</div>
+                      </div>
+                      <div class="w-full h-12 bg-gray-800 border-2 border-gray-700 rounded-lg flex items-center justify-center text-xs font-mono text-blue-300">R2</div>
+                      <div class="text-[10px] text-gray-500 font-bold uppercase">GND</div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Ohm's Law & Power -->
+          <div class="space-y-6">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+                <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-6">Ohm's Law Solver (V=IR)</h3>
+                <div class="grid grid-cols-2 gap-4">
+                   <div class="space-y-4">
+                      <div class="group">
+                         <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Voltage (V)</label>
+                         <input type="number" id="ohm-v" value="5" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-emerald-400 font-mono focus:outline-none">
+                      </div>
+                      <div class="group">
+                         <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Current (I)</label>
+                         <input type="number" id="ohm-i" value="0.02" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-amber-400 font-mono focus:outline-none">
+                      </div>
+                      <div class="group">
+                         <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Resistance (R)</label>
+                         <input type="number" id="ohm-r" value="250" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-blue-400 font-mono focus:outline-none">
+                      </div>
+                   </div>
+                   <div class="bg-gray-900/50 rounded-xl p-4 flex flex-col justify-center items-center text-center space-y-2">
+                      <span class="text-[10px] font-bold text-gray-600 uppercase">Calculated Power</span>
+                      <div id="ohm-p-out" class="text-3xl font-black text-white font-mono">100<small class="text-xs font-normal text-gray-500 ml-1">mW</small></div>
+                   </div>
+                </div>
+             </div>
+
+             <div class="bg-blue-600/10 border border-blue-500/20 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-xs font-bold text-blue-400 mb-2">Standard E12 Values</h3>
+                <p class="text-[10px] text-gray-500 leading-relaxed">
+                   Most common resistors are manufactured in the **E12 series**: 1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2. Use these for your designs to ensure part availability.
+                </p>
+             </div>
+          </div>
+        </div>
+      </section>

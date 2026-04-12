@@ -29,13 +29,27 @@
     return result;
   };
 
+  const createUnifiedPatch = (diffArray, oldLines, newLines) => {
+    let patch = `--- original\n+++ modified\n`;
+    patch += `@@ -1,${oldLines.length} +1,${newLines.length} @@\n`;
+    
+    diffArray.forEach(part => {
+      if (part.type === 'added')   patch += `+${part.value}\n`;
+      else if (part.type === 'removed') patch += `-${part.value}\n`;
+      else patch += ` ${part.value}\n`;
+    });
+    return patch;
+  };
+
   const runDiff = () => {
     const orig = $('#diff-original').val();
     const mod  = $('#diff-modified').val();
+    const $copyBtn = $('#diff-copy-patch');
 
     if (!orig && !mod) {
       $('#diff-output').html('<div class="p-4 text-gray-600 italic">Paste text in both fields above to see the diff...</div>');
       $('#diff-stats').html('');
+      $copyBtn.addClass('hidden');
       return;
     }
 
@@ -66,6 +80,13 @@
 
     $('#diff-output').html(html || '<div class="p-4 text-gray-500">No differences — both texts are identical.</div>');
 
+    const hasChanges = added > 0 || removed > 0;
+    if (hasChanges) {
+      $copyBtn.removeClass('hidden');
+    } else {
+      $copyBtn.addClass('hidden');
+    }
+
     const stats = [
       added   ? `<span class="text-green-400">+${added} added</span>` : '',
       removed ? `<span class="text-red-400">-${removed} removed</span>` : '',
@@ -75,5 +96,14 @@
   };
 
   $('#diff-original, #diff-modified').on('input', runDiff);
+
+  $('#diff-copy-patch').on('click', function() {
+    const orig = $('#diff-original').val();
+    const mod  = $('#diff-modified').val();
+    const diff = computeLineDiff(orig, mod);
+    const patch = createUnifiedPatch(diff, orig.split('\n'), mod.split('\n'));
+    
+    window.copyToClipboard(patch, $(this));
+  });
 
   // ============================================================

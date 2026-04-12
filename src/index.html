@@ -16,140 +16,395 @@
       </h1>
       <p class="text-xs text-gray-500 mt-1 uppercase hidden md:block font-semibold tracking-wider">Developer Toolkit</p>
     </div>
-    <nav class="flex-1 overflow-y-auto py-6">
-      <ul class="space-y-1.5 px-3" id="nav-list">
-        <li>
-          <a href="#" data-target="base64-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 bg-blue-600/10 text-blue-400 font-medium border border-blue-500/20 shadow-sm">
-            <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-              <span class="hidden md:inline">Base64</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="hash-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-            <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-              <span class="hidden md:inline">Hash Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="epoch-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              <span class="hidden md:inline">Epoch Converter</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="json-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-              <span class="hidden md:inline">JSON Formatter</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="jwt-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-              <span class="hidden md:inline">JWT Decoder</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="color-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-              <span class="hidden md:inline">Color Converter</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="uuid-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-              <span class="hidden md:inline">UUID Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="qr-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
-              <span class="hidden md:inline">QR Code Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="regex-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-              <span class="hidden md:inline">Regex Tester</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="diff-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-              <span class="hidden md:inline">Diff Viewer</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="base-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
-              <span class="hidden md:inline">Base Converter</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-        <!-- Quick-Win Tools -->
-        <ul class="space-y-1.5 px-3 mt-0" id="nav-list-qw">
-        <li>
-          <a href="#" data-target="lorem-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12M4 18h8"></path></svg>
-              <span class="hidden md:inline">Lorem Ipsum</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="inspect-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              <span class="hidden md:inline">String Inspector</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="password-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
-              <span class="hidden md:inline">Password Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="markdown-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-              <span class="hidden md:inline">Markdown Preview</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="unit-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
-              <span class="hidden md:inline">Unit Converter</span>
-            </div>
-          </a>
-        </li>
-        </ul>
+    
+    <div class="px-4 py-4 border-b border-gray-700 bg-gray-800 hidden md:block">
+      <div class="relative group">
+        <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="sidebar-search" placeholder="Quick find... ( / )" class="w-full bg-gray-900 border border-gray-700/50 rounded-xl pl-10 pr-4 py-2 text-xs text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all placeholder-gray-600">
+      </div>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto pt-2 pb-8 custom-scrollbar">
+      <div class="category-group px-3 mb-2" data-category="security">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Security & Encoding</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="base64-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 bg-blue-600/10 text-blue-400 font-medium border border-blue-500/20 shadow-sm">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Base64</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="hash-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                  <span class="hidden md:inline text-sm">Hash</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="jwt-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <span class="hidden md:inline text-sm">JWT</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="password-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+                  <span class="hidden md:inline text-sm">Passwords</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="pem-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <span class="hidden md:inline text-sm">PEM Inspector</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="url-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                  <span class="hidden md:inline text-sm">URL Tools</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="entities-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Entities</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="datetime">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Data & Time</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="json-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                  <span class="hidden md:inline text-sm">JSON Format</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="yaml-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm3 4h10M7 12h10M7 15h10"></path></svg>
+                  <span class="hidden md:inline text-sm">YAML Format</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="sql-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3zm4 4h8m-8 4h8"></path></svg>
+                  <span class="hidden md:inline text-sm">SQL Format</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="beautify-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Beautifier</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="epoch-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Epoch</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="unit-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Unit Converter</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="network">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Network</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="cidr-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                  <span class="hidden md:inline text-sm">CIDR Calc</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="lowlevel">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Low-Level</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="bits-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                  <span class="hidden md:inline text-sm">Bits & Masks</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="crc-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <span class="hidden md:inline text-sm">CRC Calc</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="endian-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Endian Swapper</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="carray-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">C-Array Formatter</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="limits-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                  <span class="hidden md:inline text-sm">Integer Limits</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="resistor-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12"></path></svg>
+                  <span class="hidden md:inline text-sm">Resistor Colors</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="divider-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                  <span class="hidden md:inline text-sm">Circuits / Ohm</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="baud-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                  <span class="hidden md:inline text-sm">Baud Rate Error</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="qformat-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+                  <span class="hidden md:inline text-sm">Q-Format (Fixed)</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="cobs-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3zm4 4h8m-8 4h8"></path></svg>
+                  <span class="hidden md:inline text-sm">COBS Framing</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="protocols-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                  <span class="hidden md:inline text-sm">Protocol Cards</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="dev">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Development</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="regex-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Regex Tester</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="diff-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                  <span class="hidden md:inline text-sm">Diff Viewer</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="cron-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Cron Parser</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="qr-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+                  <span class="hidden md:inline text-sm">QR Code</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="markdown-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                  <span class="hidden md:inline text-sm">Markdown</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="misc">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Content & Misc</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="lorem-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12M4 18h8"></path></svg>
+                  <span class="hidden md:inline text-sm">Lorem Ipsum</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="inspect-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Inspector</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="color-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                  <span class="hidden md:inline text-sm">Colors</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="case-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 10h12M3 15h12M17 5h4v10h-4z"></path></svg>
+                  <span class="hidden md:inline text-sm">Case Converter</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="transform-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                  <span class="hidden md:inline text-sm">Transformer</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="naming-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                  <span class="hidden md:inline text-sm">Naming Helper</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="reference">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Reference</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="http-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">HTTP Status</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="mime-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                  <span class="hidden md:inline text-sm">MIME Types</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- Sidebar Footer: Theme Picker -->
@@ -255,6 +510,408 @@
         </div>
       </section>
 
+<!-- Baud Rate Error Tool -->
+      <section id="baud-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Baud Rate Error</h2>
+          <p class="text-gray-400">Analyze timing errors between clock frequency and target UART baud rates.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Main Controls -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col md:flex-row items-end gap-6">
+             <div class="flex-1 w-full">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">MCU Clock Frequency (Hz)</label>
+                <div class="flex gap-2">
+                   <input type="number" id="baud-clock" value="16000000" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-amber-400 font-mono focus:outline-none focus:ring-1 focus:ring-amber-500/30">
+                   <select id="baud-preset" class="bg-gray-800 text-gray-300 border border-gray-700 rounded-xl px-4 py-3 text-xs focus:outline-none">
+                      <option value="8000000">8 MHz</option>
+                      <option value="16000000" selected>16 MHz</option>
+                      <option value="24000000">24 MHz</option>
+                      <option value="48000000">48 MHz</option>
+                      <option value="72000000">72 MHz</option>
+                      <option value="120000000">120 MHz</option>
+                      <option value="custom">Custom</option>
+                   </select>
+                </div>
+             </div>
+             <div class="flex bg-gray-900 rounded-xl p-1 border border-gray-700 h-[52px] items-center">
+                <button class="baud-os-btn px-4 py-1.5 text-[10px] font-bold rounded-lg transition-all bg-blue-600 text-white" data-os="16">16x Sample</button>
+                <button class="baud-os-btn px-4 py-1.5 text-[10px] font-bold rounded-lg transition-all text-gray-500 hover:text-gray-300" data-os="8">8x Sample</button>
+             </div>
+          </div>
+
+          <!-- Analysis Table -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-700/30 text-gray-400 border-b border-gray-700/50">
+                   <tr>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Baud Rate</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Ideal Divider</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Actual Divider</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Actual Baud</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-right">Error %</th>
+                   </tr>
+                </thead>
+                <tbody id="baud-table-body" class="divide-y divide-gray-700/30 font-mono text-sm">
+                   <!-- Populated by JS -->
+                </tbody>
+             </table>
+          </div>
+
+          <!-- Alert Tip -->
+          <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 flex items-start space-x-4">
+             <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+             <p class="text-[11px] text-gray-500 leading-normal">
+                Error rates above **2.0%** are generally considered unreliable for stable UART communication. If your error is high, consider using a crystal frequency that is an integer multiple of common baud rates (e.g., **11.0592 MHz** or **14.7456 MHz**).
+             </p>
+          </div>
+        </div>
+      </section>
+
+
+<!-- HTML/XML Beautifier Tool -->
+      <section id="beautify-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">HTML/XML Beautifier</h2>
+          <p class="text-gray-400">Clean up and format messy HTML or XML markup.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Raw Markup</span>
+                <button id="beautify-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="beautify-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600" placeholder="Paste your HTML or XML here..."></textarea>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Formatted Result</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button id="beautify-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all shadow-lg shadow-blue-500/20 active:scale-95">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+             </div>
+             <textarea id="beautify-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Formatted markup will appear here..."></textarea>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Bit Manipulator Tool -->
+      <section id="bits-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Bits & Masks</h2>
+          <p class="text-gray-400">Interactive bit-level manipulator for 64-bit values.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Main Output Display -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col md:flex-row items-center gap-6">
+             <div class="flex-1 w-full">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Hexadecimal (0x)</label>
+                <input type="text" id="bits-out-hex" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-3xl text-emerald-400 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50" placeholder="0x0000000000000000">
+             </div>
+             <div class="md:w-64 w-full">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Decimal</label>
+                <input type="text" id="bits-out-dec" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-xl text-gray-300 font-mono focus:outline-none" placeholder="0">
+             </div>
+          </div>
+
+          <!-- Bit Grid -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+             <div class="flex justify-between items-center mb-6">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest">64-Bit Grid</h3>
+                <div class="flex space-x-2">
+                   <button id="bits-clear" class="px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg text-[10px] font-bold uppercase transition-colors">Clear All</button>
+                   <button id="bits-set-all" class="px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg text-[10px] font-bold uppercase transition-colors">Set All</button>
+                   <button id="bits-invert" class="px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg text-[10px] font-bold uppercase transition-colors">Invert</button>
+                </div>
+             </div>
+             
+             <!-- 8 Rows of 8 Bits -->
+             <div class="grid grid-cols-4 sm:grid-cols-8 gap-3" id="bits-grid-container">
+                <!-- Generated by JS -->
+             </div>
+          </div>
+
+          <!-- Bit Info -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+             <div class="bg-gray-900/40 border border-gray-800 rounded-xl p-4">
+                <span class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Binary Representation</span>
+                <div id="bits-out-bin" class="text-[10px] font-mono text-gray-500 break-all leading-relaxed tracking-tighter"></div>
+             </div>
+             <div class="bg-gray-900/40 border border-gray-800 rounded-xl p-4">
+                <span class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Bit Order</span>
+                <p class="text-xs text-gray-400">Top-Left: Bit 63 (MSB)<br>Bottom-Right: Bit 0 (LSB)</p>
+             </div>
+             <div class="bg-gray-900/40 border border-gray-800 rounded-xl p-4">
+                <span class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Code Snippet (C)</span>
+                <div id="bits-out-code" class="text-[10px] font-mono text-emerald-500 break-all">#define MASK 0x0ULL</div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- C-Array Formatter Tool -->
+      <section id="carray-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">C-Array Formatter</h2>
+          <p class="text-gray-400">Convert data streams into formatted C/C++ byte arrays for firmware integration.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Area -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Raw Input (Hex or Bin)</span>
+                <button id="carray-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="carray-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600 border-b border-gray-700/50" placeholder="e.g. 12 34 AB CD or 01011010..."></textarea>
+             <!-- Controls -->
+             <div class="p-4 bg-gray-900/50 grid grid-cols-2 gap-3">
+                <div>
+                   <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Items Per Line</label>
+                   <input type="number" id="carray-cols" value="12" min="1" max="64" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-xs text-gray-300">
+                </div>
+                <div>
+                   <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Variable Name</label>
+                   <input type="text" id="carray-name" value="rawData" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-xs text-gray-300">
+                </div>
+             </div>
+          </div>
+
+          <!-- Output Output -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">C Array Output</span>
+                <button id="carray-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all active:scale-95">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                  <span>Copy Array</span>
+                </button>
+             </div>
+             <textarea id="carray-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-emerald-400 font-mono text-xs focus:outline-none resize-none" placeholder="C array code will appear here..."></textarea>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Case Converter Tool -->
+      <section id="case-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Case Converter</h2>
+          <p class="text-gray-400">Instantly convert text between different naming conventions.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Multi-row Input -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm shadow-xl">
+             <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Original Text</span>
+                <button id="case-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors">Clear</button>
+             </div>
+             <textarea id="case-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-gray-200 font-mono text-base focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-shadow resize-none h-32" placeholder="e.g. userProfileData or user_profile_data"></textarea>
+          </div>
+
+          <!-- Output Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <!-- camelCase -->
+            <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group relative hover:border-blue-500/30 transition-colors">
+              <label class="block text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-2">camelCase</label>
+              <div id="out-camel" class="text-sm font-mono text-gray-300 truncate pr-8 h-5"></div>
+              <button class="case-copy-btn absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="out-camel">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              </button>
+            </div>
+
+            <!-- snake_case -->
+            <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group relative hover:border-emerald-500/30 transition-colors">
+              <label class="block text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-2">snake_case</label>
+              <div id="out-snake" class="text-sm font-mono text-gray-300 truncate pr-8 h-5"></div>
+              <button class="case-copy-btn absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="out-snake">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              </button>
+            </div>
+
+            <!-- kebab-case -->
+            <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group relative hover:border-rose-500/30 transition-colors">
+              <label class="block text-[10px] font-bold text-rose-400 uppercase tracking-widest mb-2">kebab-case</label>
+              <div id="out-kebab" class="text-sm font-mono text-gray-300 truncate pr-8 h-5"></div>
+              <button class="case-copy-btn absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-rose-400" data-from="out-kebab">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              </button>
+            </div>
+
+            <!-- PascalCase -->
+            <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group relative hover:border-violet-500/30 transition-colors">
+              <label class="block text-[10px] font-bold text-violet-400 uppercase tracking-widest mb-2">PascalCase</label>
+              <div id="out-pascal" class="text-sm font-mono text-gray-300 truncate pr-8 h-5"></div>
+              <button class="case-copy-btn absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-violet-400" data-from="out-pascal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              </button>
+            </div>
+
+            <!-- CONSTANT_CASE -->
+            <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group relative hover:border-amber-500/30 transition-colors">
+              <label class="block text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-2">CONSTANT_CASE</label>
+              <div id="out-constant" class="text-sm font-mono text-gray-300 truncate pr-8 h-5"></div>
+              <button class="case-copy-btn absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-amber-400" data-from="out-constant">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              </button>
+            </div>
+
+            <!-- Sentence Case -->
+            <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 group relative hover:border-cyan-500/30 transition-colors">
+              <label class="block text-[10px] font-bold text-cyan-400 uppercase tracking-widest mb-2">Sentence case</label>
+              <div id="out-sentence" class="text-sm font-mono text-gray-300 truncate pr-8 h-5"></div>
+              <button class="case-copy-btn absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-cyan-400" data-from="out-sentence">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- CIDR / Subnet Calculator -->
+      <section id="cidr-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">CIDR / Subnet Calculator</h2>
+          <p class="text-gray-400">Calculate IP ranges, masks, and network details for IPv4.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Input Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+             <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                   <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">IP Address / CIDR</label>
+                   <input type="text" id="cidr-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-xl text-emerald-400 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-shadow" placeholder="e.g. 192.168.1.0/24">
+                </div>
+                <div class="md:w-64">
+                   <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Common Masks</label>
+                   <select id="cidr-mask-select" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 h-[52px]">
+                      <option value="32">/32 (1 host)</option>
+                      <option value="31">/31 (2 hosts)</option>
+                      <option value="30">/30 (4 hosts)</option>
+                      <option value="29">/29 (8 hosts)</option>
+                      <option value="28">/28 (16 hosts)</option>
+                      <option value="27">/27 (32 hosts)</option>
+                      <option value="26">/26 (64 hosts)</option>
+                      <option value="25">/25 (128 hosts)</option>
+                      <option value="24" selected>/24 (256 hosts)</option>
+                      <option value="23">/23 (512 hosts)</option>
+                      <option value="22">/22 (1024 hosts)</option>
+                      <option value="21">/21 (2048 hosts)</option>
+                      <option value="20">/20 (4096 hosts)</option>
+                      <option value="16">/16 (65,536 hosts)</option>
+                      <option value="8">/8 (16,777,216 hosts)</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+
+          <!-- Results Hub -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Network Address</label>
+                <div id="cidr-out-network" class="text-lg font-mono text-emerald-300 h-7"></div>
+                <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="cidr-out-network"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Subnet Mask</label>
+                <div id="cidr-out-mask" class="text-lg font-mono text-emerald-300 h-7"></div>
+                <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="cidr-out-mask"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Broadcast</label>
+                <div id="cidr-out-broadcast" class="text-lg font-mono text-emerald-300 h-7"></div>
+                <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="cidr-out-broadcast"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Usable Hosts</label>
+                <div id="cidr-out-hosts" class="text-lg font-mono text-emerald-300 h-7"></div>
+             </div>
+          </div>
+
+          <!-- Ranges Pane -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Address Range</h3>
+             
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">First Useable</span>
+                      <span id="cidr-out-first" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">Last Useable</span>
+                      <span id="cidr-out-last" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                </div>
+                <div class="space-y-4">
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">Hex Mask</span>
+                      <span id="cidr-out-hex" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">Wildcard Mask</span>
+                      <span id="cidr-out-wildcard" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                </div>
+             </div>
+             
+             <!-- Error Tip -->
+             <div id="cidr-error" class="hidden absolute top-0 left-0 w-full h-full bg-rose-900/40 backdrop-blur-sm flex items-center justify-center p-6 text-center">
+                <div class="bg-rose-500 text-white px-6 py-3 rounded-xl font-bold shadow-2xl">
+                   Invalid IP address or CIDR notation
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- COBS Framing Tool -->
+      <section id="cobs-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">COBS Framing</h2>
+          <p class="text-gray-400">Consistent Overhead Byte Stuffing for reliable serial data framing.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Area -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Unframed Data (Hex)</span>
+                <button id="cobs-encode-btn" class="bg-blue-600 text-white px-4 py-1.2 rounded-lg text-[10px] font-bold uppercase transition-all hover:bg-blue-500 active:scale-95">Encode ↓</button>
+             </div>
+             <textarea id="cobs-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600 border-b border-gray-700/50" placeholder="e.g. 01 02 00 03 00"></textarea>
+          </div>
+
+          <!-- Output Area -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">COBS Encoded (Hex)</span>
+                <button id="cobs-decode-btn" class="bg-emerald-600 text-white px-4 py-1.2 rounded-lg text-[10px] font-bold uppercase transition-all hover:bg-emerald-500 active:scale-95">Decode ↑</button>
+             </div>
+             <textarea id="cobs-output" class="flex-1 w-full bg-transparent border-none p-5 text-emerald-400 font-mono text-sm focus:outline-none resize-none placeholder-gray-600" placeholder="e.g. 03 01 02 02 03 01 00"></textarea>
+          </div>
+        </div>
+      </section>
+
+
 <!-- Color Converter Tool -->
       <section id="color-tool" class="tool-section hidden animate-fade-in">
         <header class="mb-4">
@@ -298,6 +955,130 @@
         </div>
       </section>
 
+<!-- CRC & Checksum Tool -->
+      <section id="crc-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">CRC & Checksum</h2>
+          <p class="text-gray-400">Calculate data integrity check values for common polynomials.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input + Options -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input Data</span>
+                  <div class="flex bg-gray-900 rounded-lg p-0.5 border border-gray-700">
+                    <button id="crc-input-type-text" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all bg-blue-600 text-white shadow-sm">Text</button>
+                    <button id="crc-input-type-hex" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">Hex</button>
+                  </div>
+                </div>
+                <button id="crc-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="crc-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600 border-b border-gray-700/50" placeholder="Paste data here..."></textarea>
+             
+             <!-- Polynomial Selection -->
+             <div class="p-4 bg-gray-900/50">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Polynomial / Algorithm</label>
+                <select id="crc-algo" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500/50 h-10">
+                   <optgroup label="8-Bit">
+                      <option value="crc8">CRC-8 (SMBus)</option>
+                   </optgroup>
+                   <optgroup label="16-Bit">
+                      <option value="crc16ccitt" selected>CRC-16-CCITT (XModem)</option>
+                      <option value="crc16modbus">CRC-16-Modbus</option>
+                   </optgroup>
+                   <optgroup label="32-Bit">
+                      <option value="crc32">CRC-32 (Ethernet)</option>
+                   </optgroup>
+                   <optgroup label="Checksums">
+                      <option value="xor">XOR 8-Bit Checksum</option>
+                      <option value="sum8">Arithmetic Sum 8-Bit</option>
+                   </optgroup>
+                </select>
+             </div>
+          </div>
+
+          <!-- Output Display -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group p-6 justify-center">
+             <div class="text-center space-y-4">
+                <span class="block text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em]">Calculated Value</span>
+                <div id="crc-output" class="text-6xl font-black text-white font-mono tracking-wider break-all">-</div>
+                <div class="flex items-center justify-center space-x-2 mt-6">
+                   <button id="crc-copy-btn" class="flex items-center space-x-2 px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg active:scale-95">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                      <span>Copy Hex</span>
+                   </button>
+                </div>
+             </div>
+             
+             <!-- Error Tip -->
+             <div id="crc-error" class="hidden absolute bottom-4 left-4 right-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 px-4 py-2 rounded-xl text-xs font-medium backdrop-blur-md">
+                Invalid hex input.
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Cron Parser Tool -->
+      <section id="cron-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Cron Expression Parser</h2>
+          <p class="text-gray-400">Validate and explain Crontab expressions in plain English.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-4xl">
+          <!-- Input Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+             <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Cron Expression</label>
+             <div class="flex flex-col sm:flex-row gap-4">
+                <input type="text" id="cron-input" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-xl text-blue-400 font-mono focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-shadow" placeholder="* * * * *">
+                <button id="cron-example-btn" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-200 rounded-xl text-sm font-medium transition-colors">Random Example</button>
+             </div>
+          </div>
+
+          <!-- Explanation Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Human Readable Explanation</h3>
+             <div id="cron-explanation" class="text-xl text-gray-100 font-medium leading-relaxed">
+                Enter an expression above to see the schedule...
+             </div>
+
+             <!-- Grid Stats -->
+             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mt-8 pt-6 border-t border-gray-700/50">
+                <div class="bg-gray-900/50 rounded-lg p-2 text-center">
+                   <span class="block text-[8px] font-bold text-gray-500 uppercase mb-1">Minute</span>
+                   <span id="cron-part-min" class="text-xs font-mono text-blue-300">-</span>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-2 text-center">
+                   <span class="block text-[8px] font-bold text-gray-500 uppercase mb-1">Hour</span>
+                   <span id="cron-part-hour" class="text-xs font-mono text-blue-300">-</span>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-2 text-center">
+                   <span class="block text-[8px] font-bold text-gray-500 uppercase mb-1">Day</span>
+                   <span id="cron-part-day" class="text-xs font-mono text-blue-300">-</span>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-2 text-center">
+                   <span class="block text-[8px] font-bold text-gray-500 uppercase mb-1">Month</span>
+                   <span id="cron-part-month" class="text-xs font-mono text-blue-300">-</span>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-2 text-center">
+                   <span class="block text-[8px] font-bold text-gray-500 uppercase mb-1">Weekday</span>
+                   <span id="cron-part-week" class="text-xs font-mono text-blue-300">-</span>
+                </div>
+             </div>
+
+             <!-- Error Tip -->
+             <div id="cron-error" class="hidden absolute inset-x-0 bottom-0 bg-rose-500/90 text-white text-center py-2 text-xs font-bold animate-slide-up">
+                Invalid Cron Expression
+             </div>
+          </div>
+        </div>
+      </section>
+
+
 <!-- ===== DIFF VIEWER ===== -->
       <section id="diff-tool" class="tool-section hidden">
         <header class="mb-4">
@@ -326,8 +1107,14 @@
         <!-- Diff output -->
         <div class="bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden">
           <div class="px-4 py-2.5 border-b border-gray-800 bg-gray-800/40 flex items-center justify-between">
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Diff Output</span>
-            <div id="diff-stats" class="flex gap-4 text-xs font-semibold"></div>
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Diff Output</span>
+              <div id="diff-stats" class="flex gap-4 text-xs font-semibold"></div>
+            </div>
+            <button id="diff-copy-patch" class="hidden bg-blue-600/20 hover:bg-blue-500/40 text-blue-400 border border-blue-500/40 rounded px-3 py-1.5 text-xs font-semibold transition shadow-sm flex items-center gap-2">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              Copy as Patch
+            </button>
           </div>
           <div id="diff-output" class="font-mono text-xs leading-6 overflow-y-auto max-h-72 lg:max-h-[600px] transition-all">
             <div class="p-4 text-gray-600 italic">Paste text in both fields above to see the diff...</div>
@@ -335,12 +1122,217 @@
         </div>
       </section>
 
+<!-- Voltage Divider Tool -->
+      <section id="divider-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Circuits & Ohm's Law</h2>
+          <p class="text-gray-400">Calculate voltage dividers and basic circuit parameters.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl">
+          <!-- Voltage Divider Card -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col">
+             <div class="flex justify-between items-center mb-6">
+                <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-none">Voltage Divider Solver</h3>
+                <span class="text-[9px] text-gray-600 bg-gray-900 px-2 py-0.5 rounded border border-gray-800">Vout = Vin * (R2 / (R1 + R2))</span>
+             </div>
+
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-1">
+                <!-- Inputs -->
+                <div class="space-y-4">
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Input Voltage (Vin)</label>
+                      <input type="number" id="div-vin" value="5" step="0.1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-emerald-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">V</span>
+                   </div>
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Resistor 1 (R1)</label>
+                      <input type="number" id="div-r1" value="1000" step="1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-blue-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">Ω</span>
+                   </div>
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Resistor 2 (R2)</label>
+                      <input type="number" id="div-r2" value="1000" step="1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-blue-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">Ω</span>
+                   </div>
+                   <div class="relative group">
+                      <label class="block text-[10px] font-bold text-rose-500/80 uppercase mb-2">Output Voltage (Vout)</label>
+                      <input type="number" id="div-vout" value="2.5" step="0.1" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-lg text-rose-400 font-mono focus:outline-none transition-shadow group-hover:shadow-lg focus:ring-1 focus:ring-blue-500/30">
+                      <span class="absolute right-4 top-10 text-gray-600 text-xs font-bold">V</span>
+                   </div>
+                </div>
+
+                <!-- Schematic Representation -->
+                <div class="flex justify-center">
+                   <div class="relative w-48 h-64 border-l-2 border-gray-700/50 flex flex-col items-start px-6 justify-between py-2">
+                      <div class="absolute -left-1 top-0 w-2 h-2 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.5)]"></div>
+                      <div class="absolute -left-1 bottom-0 w-2 h-2 bg-gray-600 rounded-full"></div>
+                      
+                      <div class="text-[10px] text-gray-500 font-bold uppercase">VIN</div>
+                      <div class="w-full h-12 bg-gray-800 border-2 border-gray-700 rounded-lg flex items-center justify-center text-xs font-mono text-blue-300">R1</div>
+                      <div class="w-full h-0.5 bg-gray-700 relative">
+                         <div class="absolute right-0 -top-1 w-2 h-2 bg-rose-400 rounded-full shadow-[0_0_8px_rgba(251,113,133,0.5)]"></div>
+                         <div class="absolute -right-12 -top-2 text-[10px] text-rose-400 font-bold">VOUT</div>
+                      </div>
+                      <div class="w-full h-12 bg-gray-800 border-2 border-gray-700 rounded-lg flex items-center justify-center text-xs font-mono text-blue-300">R2</div>
+                      <div class="text-[10px] text-gray-500 font-bold uppercase">GND</div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Ohm's Law & Power -->
+          <div class="space-y-6">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+                <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-6">Ohm's Law Solver (V=IR)</h3>
+                <div class="grid grid-cols-2 gap-4">
+                   <div class="space-y-4">
+                      <div class="group">
+                         <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Voltage (V)</label>
+                         <input type="number" id="ohm-v" value="5" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-emerald-400 font-mono focus:outline-none">
+                      </div>
+                      <div class="group">
+                         <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Current (I)</label>
+                         <input type="number" id="ohm-i" value="0.02" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-amber-400 font-mono focus:outline-none">
+                      </div>
+                      <div class="group">
+                         <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Resistance (R)</label>
+                         <input type="number" id="ohm-r" value="250" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-blue-400 font-mono focus:outline-none">
+                      </div>
+                   </div>
+                   <div class="bg-gray-900/50 rounded-xl p-4 flex flex-col justify-center items-center text-center space-y-2">
+                      <span class="text-[10px] font-bold text-gray-600 uppercase">Calculated Power</span>
+                      <div id="ohm-p-out" class="text-3xl font-black text-white font-mono">100<small class="text-xs font-normal text-gray-500 ml-1">mW</small></div>
+                   </div>
+                </div>
+             </div>
+
+             <div class="bg-blue-600/10 border border-blue-500/20 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-xs font-bold text-blue-400 mb-2">Standard E12 Values</h3>
+                <p class="text-[10px] text-gray-500 leading-relaxed">
+                   Most common resistors are manufactured in the **E12 series**: 1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2. Use these for your designs to ensure part availability.
+                </p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Endianness Swapper Tool -->
+      <section id="endian-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Endianness Swapper</h2>
+          <p class="text-gray-400">Instantly swap byte order for 16, 32, and 64-bit integer values.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-4xl">
+          <!-- Input Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col md:flex-row items-end gap-4">
+             <div class="flex-1 w-full">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Input Value (Hex or Dec)</label>
+                <input type="text" id="endian-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-blue-400 font-mono focus:outline-none focus:ring-2 focus:ring-blue-500/50" placeholder="e.g. 0x12345678">
+             </div>
+             <div class="md:w-48 w-full">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Width</label>
+                <select id="endian-width" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 focus:outline-none">
+                   <option value="16">16-bit</option>
+                   <option value="32" selected>32-bit</option>
+                   <option value="64">64-bit</option>
+                </select>
+             </div>
+          </div>
+
+          <!-- Output Display -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl relative overflow-hidden">
+             <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+             
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                   <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Swapped Results</h3>
+                   <div class="p-4 bg-gray-900/50 rounded-xl border border-gray-800 group relative">
+                      <span class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Hexadecimal</span>
+                      <div id="endian-out-hex" class="text-xl font-mono text-emerald-400">0x00000000</div>
+                      <button class="endian-copy-btn absolute top-4 right-4 text-gray-600 hover:text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" data-from="endian-out-hex"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+                   </div>
+                   <div class="p-4 bg-gray-900/50 rounded-xl border border-gray-800">
+                      <span class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Decimal</span>
+                      <div id="endian-out-dec" class="text-xl font-mono text-gray-400">0</div>
+                   </div>
+                </div>
+
+                <div class="space-y-4">
+                   <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Visualization</h3>
+                   <div class="p-4 bg-gray-900/30 rounded-xl border border-gray-800/50 min-h-[120px] flex flex-col justify-center items-center text-center">
+                      <div id="endian-viz" class="flex flex-wrap justify-center gap-2">
+                         <!-- Dynamically Generated Bytes -->
+                      </div>
+                      <p class="text-[10px] text-gray-600 mt-4 uppercase tracking-widest font-bold">Byte Sequence Swapping</p>
+                   </div>
+                </div>
+             </div>
+             
+             <!-- Error Tip -->
+             <div id="endian-error" class="hidden absolute top-0 left-0 w-full h-full bg-rose-900/40 backdrop-blur-sm flex items-center justify-center p-6 text-center">
+                <div class="bg-rose-500 text-white px-6 py-3 rounded-xl font-bold shadow-2xl">
+                   Unsupported value for chosen width
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- HTML Entities Tool -->
+      <section id="entities-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">HTML Entity Encoder / Decoder</h2>
+          <p class="text-gray-400">Convert characters to HTML entities and vice versa for safe web rendering.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input Text</span>
+                <button id="entities-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="entities-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600" placeholder="Paste text or entities here..."></textarea>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Output</span>
+                  <div class="flex bg-gray-900 rounded-lg p-0.5 border border-gray-700">
+                    <button id="entities-mode-encode" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all bg-blue-600 text-white shadow-sm">Encode</button>
+                    <button id="entities-mode-decode" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">Decode</button>
+                  </div>
+                </div>
+                <button id="entities-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all active:scale-95">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                  <span>Copy</span>
+                </button>
+             </div>
+             <textarea id="entities-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Result will appear here..."></textarea>
+          </div>
+        </div>
+      </section>
+
+
 <!-- Epoch Converter Tool -->
       <section id="epoch-tool" class="tool-section hidden animate-fade-in">
-        <header class="mb-4">
-          <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
-          <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
+        <header class="mb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
+            <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
+          </div>
+          <div class="bg-blue-600/10 border border-blue-500/20 rounded-xl px-4 py-2 flex flex-col items-center min-w-[180px]">
+            <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-1">Live Current Epoch</span>
+            <div id="live-epoch" class="text-xl font-mono font-bold text-blue-300">0000000000</div>
+          </div>
         </header>
+
         <div class="w-full flex flex-col gap-6">
           
           <!-- Timestamp to Date -->
@@ -354,14 +1346,25 @@
               <button id="epoch-current-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors font-medium shadow-lg shadow-blue-500/20 whitespace-nowrap">Now</button>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
                 <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Local Time</label>
                 <div id="epoch-local-out" class="text-sm text-gray-200 font-medium h-5"></div>
+                <button class="copy-field absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="epoch-local-out"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
               </div>
-              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
                 <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">GMT (UTC)</label>
                 <div id="epoch-gmt-out" class="text-sm text-gray-200 font-medium h-5"></div>
+                <button class="copy-field absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="epoch-gmt-out"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">ISO 8601</label>
+                <div id="epoch-iso-out" class="text-sm text-gray-200 font-medium h-5 truncate pr-6"></div>
+                <button class="copy-field absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="epoch-iso-out"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Relative</label>
+                <div id="epoch-relative-out" class="text-sm text-blue-400 font-bold h-5"></div>
               </div>
             </div>
           </div>
@@ -371,12 +1374,40 @@
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
             <h3 class="text-xl font-semibold text-white mb-4">Date ➔ Timestamp</h3>
             <div class="flex flex-col mb-4">
-               <input type="datetime-local" id="date-input" step="1" class="w-full sm:w-2/3 bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-shadow text-sm">
+               <input type="datetime-local" id="date-input" step="1" class="w-full lg:w-1/2 bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-shadow text-sm">
             </div>
             
-            <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 inline-block min-w-[200px]">
-              <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Seconds</label>
-              <div id="date-timestamp-out" class="text-xl text-purple-400 font-mono font-bold h-6"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Seconds</label>
+                <div id="date-timestamp-out" class="text-xl text-purple-400 font-mono font-bold h-6"></div>
+                <button class="copy-field absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-purple-400" data-from="date-timestamp-out"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Milliseconds</label>
+                <div id="date-ms-out" class="text-xl text-purple-400 font-mono font-bold h-6 opacity-60"></div>
+                <button class="copy-field absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-purple-400" data-from="date-ms-out"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timezone Conversion -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+            <h3 class="text-xl font-semibold text-white mb-4">Timezone Converter</h3>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-5">
+              <div class="flex-1 max-w-md">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 ml-1">Target Timezone</label>
+                <select id="tz-selector" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white transition-shadow text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50">
+                   <!-- Populated via JS -->
+                </select>
+              </div>
+            </div>
+            
+            <div class="bg-gray-900/70 rounded-xl p-5 border border-gray-700/50 group relative min-h-[100px] flex flex-col justify-center">
+               <label class="block text-xs font-bold text-emerald-500/80 uppercase tracking-wider mb-2">Result in Selection</label>
+               <div id="tz-output" class="text-2xl font-mono font-bold text-gray-100 break-words leading-tight">Pick a timezone...</div>
+               <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="tz-output"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
             </div>
           </div>
 
@@ -442,6 +1473,37 @@
           </div>
         </div>
       </section>
+
+<!-- HTTP Status Codes Tool -->
+      <section id="http-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">HTTP Status Codes</h2>
+          <p class="text-gray-400">Quick reference for HTTP response status codes and their meanings.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6">
+          <!-- Search Row -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-4 backdrop-blur-sm shadow-xl flex items-center space-x-4">
+             <div class="relative flex-1">
+                <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" id="http-search" class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-11 pr-4 py-2.5 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50" placeholder="Search by code or description (e.g. 404 or Not Found)...">
+             </div>
+             <div class="flex bg-gray-900 rounded-lg p-0.5 border border-gray-700">
+                <button data-filter="all" class="http-filter-btn px-3 py-1 text-[10px] font-bold rounded-md transition-all bg-blue-600 text-white shadow-sm">All</button>
+                <button data-filter="2" class="http-filter-btn px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">2xx</button>
+                <button data-filter="3" class="http-filter-btn px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">3xx</button>
+                <button data-filter="4" class="http-filter-btn px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">4xx</button>
+                <button data-filter="5" class="http-filter-btn px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">5xx</button>
+             </div>
+          </div>
+
+          <!-- Codes Grid -->
+          <div id="http-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-[calc(100vh-340px)] overflow-y-auto pr-2 custom-scrollbar">
+             <!-- Dynamically Populated -->
+          </div>
+        </div>
+      </section>
+
 
 <!-- ===== STRING INSPECTOR ===== -->
       <section id="inspect-tool" class="tool-section hidden">
@@ -588,6 +1650,59 @@
         </div>
       </section>
 
+<!-- Integer Limits Reference Tool -->
+      <section id="limits-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Integer Limits Reference</h2>
+          <p class="text-gray-400">Quick-glance reference for standard C/C++ integer types (stdint.h).</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-800/50 border-b border-gray-700">
+                   <tr>
+                      <th class="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</th>
+                      <th class="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Bits</th>
+                      <th class="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Minimum Value</th>
+                      <th class="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Maximum Value</th>
+                      <th class="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Hex Max</th>
+                   </tr>
+                </thead>
+                <tbody id="limits-table-body" class="divide-y divide-gray-700/50 font-mono text-sm">
+                   <!-- Populated by JS -->
+                </tbody>
+             </table>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm">
+                <h3 class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-3">Memory Sizes</h3>
+                <ul class="space-y-2 text-xs text-gray-400">
+                   <li class="flex justify-between"><span>Nibble</span> <span class="text-gray-200">4 Bits</span></li>
+                   <li class="flex justify-between"><span>Byte</span> <span class="text-gray-200">8 Bits</span></li>
+                   <li class="flex justify-between"><span>Word (16-bit)</span> <span class="text-gray-200">2 Bytes</span></li>
+                   <li class="flex justify-between"><span>DWord (32-bit)</span> <span class="text-gray-200">4 Bytes</span></li>
+                   <li class="flex justify-between"><span>QWord (64-bit)</span> <span class="text-gray-200">8 Bytes</span></li>
+                </ul>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm">
+                <h3 class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3">Two's Complement</h3>
+                <p class="text-[11px] text-gray-500 leading-relaxed">
+                   Most modern systems use **Two's Complement** for signed integers. The MSB (Most Significant Bit) acts as the sign bit. 
+                   <br><br>
+                   Formula for `n` bits:
+                   <br>
+                   Signed: `[-2^(n-1), 2^(n-1) - 1]`
+                   <br>
+                   Unsigned: `[0, 2^n - 1]`
+                </p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
 <!-- ===== LOREM IPSUM GENERATOR ===== -->
       <section id="lorem-tool" class="tool-section hidden">
         <header class="mb-5">
@@ -642,6 +1757,79 @@
         </div>
       </section>
 
+<!-- MIME Type Lookup Tool -->
+      <section id="mime-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">MIME Type Lookup</h2>
+          <p class="text-gray-400">Find MIME types by file extension or vice-versa.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-4xl">
+          <!-- Search Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl relative overflow-hidden">
+             <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+             
+             <div class="flex flex-col sm:flex-row gap-4">
+                <div class="relative flex-1">
+                   <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                   <input type="text" id="mime-search" class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-11 pr-4 py-3 text-lg text-indigo-300 font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500/50" placeholder="e.g. .json, image/png, or pdf...">
+                </div>
+             </div>
+          </div>
+
+          <!-- Results Hub -->
+          <div id="mime-results" class="grid grid-cols-1 md:grid-cols-2 gap-4 h-[calc(100vh-360px)] overflow-y-auto pr-2 custom-scrollbar">
+             <!-- Dynamically Populated -->
+          </div>
+          
+          <div id="mime-empty" class="hidden flex flex-col items-center justify-center py-12 text-gray-600">
+             <svg class="w-12 h-12 mb-4 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+             <p>No MIME types found for that search.</p>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Variable Naming Tool -->
+      <section id="naming-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Variable & Function Naming</h2>
+          <p class="text-gray-400">Get naming suggestions for your code based on common conventions.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Input Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex items-center space-x-4">
+             <div class="flex-1">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Target Subject</label>
+                <input type="text" id="naming-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-violet-400 font-bold focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-shadow" placeholder="e.g. user, session, profile...">
+             </div>
+          </div>
+
+          <!-- Suggestions Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+             <!-- Boolean / State -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-[10px] font-bold text-violet-400 uppercase tracking-[0.2em] mb-4">Booleans / State</h3>
+                <div id="naming-out-bool" class="space-y-2"></div>
+             </div>
+             
+             <!-- Actions / Functions -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-[10px] font-bold text-emerald-400 uppercase tracking-[0.2em] mb-4">Actions / Functions</h3>
+                <div id="naming-out-action" class="space-y-2"></div>
+             </div>
+
+             <!-- Collections / Lists -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-[10px] font-bold text-amber-400 uppercase tracking-[0.2em] mb-4">Collections / Counts</h3>
+                <div id="naming-out-list" class="space-y-2"></div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
 <!-- ===== PASSWORD GENERATOR ===== -->
       <section id="password-tool" class="tool-section hidden">
         <header class="mb-5">
@@ -691,6 +1879,159 @@
           </div>
         </div>
       </section>
+
+<!-- PEM / Certificate Inspector Tool -->
+      <section id="pem-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">PEM / Certificate Inspector</h2>
+          <p class="text-gray-400">Inspect and decode X.509 certificates and PEM blocks.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">PEM Block</span>
+                <button id="pem-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="pem-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-xs focus:outline-none resize-none placeholder-gray-600" placeholder="-----BEGIN CERTIFICATE-----\n..."></textarea>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group p-6">
+             <div id="pem-empty-state" class="flex flex-col items-center justify-center h-full text-gray-600 space-y-4 text-center">
+                <svg class="w-12 h-12 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <p>Paste a PEM block to view certificate details.</p>
+             </div>
+             
+             <div id="pem-details" class="hidden space-y-6 overflow-y-auto pr-2 custom-scrollbar">
+                <div class="space-y-4">
+                   <div class="border-b border-gray-700/50 pb-2">
+                      <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Subject</span>
+                      <div id="pem-out-subject" class="text-sm text-gray-100 font-mono break-all"></div>
+                   </div>
+                   <div class="border-b border-gray-700/50 pb-2">
+                      <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Issuer</span>
+                      <div id="pem-out-issuer" class="text-sm text-gray-100 font-mono break-all"></div>
+                   </div>
+                   <div class="grid grid-cols-2 gap-4">
+                      <div class="border-b border-gray-700/50 pb-2">
+                         <span class="block text-[10px] font-bold text-emerald-400 uppercase mb-1">Not Before</span>
+                         <div id="pem-out-start" class="text-xs text-gray-300 font-mono"></div>
+                      </div>
+                      <div class="border-b border-gray-700/50 pb-2">
+                         <span class="block text-[10px] font-bold text-rose-400 uppercase mb-1">Not After</span>
+                         <div id="pem-out-end" class="text-xs text-gray-300 font-mono"></div>
+                      </div>
+                   </div>
+                   <div class="border-b border-gray-700/50 pb-2">
+                      <span class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Serial Number</span>
+                      <div id="pem-out-serial" class="text-xs text-gray-400 font-mono"></div>
+                   </div>
+                </div>
+                
+                <div id="pem-type-badge" class="inline-block px-3 py-1 bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-lg text-[10px] font-bold uppercase">
+                   Certificate Block
+                </div>
+             </div>
+
+             <!-- Error Tip -->
+             <div id="pem-error" class="hidden absolute top-4 left-4 right-4 bg-rose-500/90 text-white px-4 py-2 rounded-xl text-xs font-bold text-center animate-slide-up">
+                Invalid PEM block or unsupported format.
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Protocol Cheat-Sheet Tool -->
+      <section id="protocols-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Protocol Reference</h2>
+          <p class="text-gray-400">Quick-glance reference for common hardware communication protocols and pinouts.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-6xl">
+          <!-- Search & Filter -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-4 backdrop-blur-sm shadow-xl flex items-center gap-4">
+             <div class="relative flex-1">
+                <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" id="prot-search" class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-11 pr-4 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500/50" placeholder="Search protocols (e.g. I2C, JTAG)...">
+             </div>
+          </div>
+
+          <!-- Cards Grid -->
+          <div id="prot-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-[calc(100vh-320px)] overflow-y-auto pr-2 custom-scrollbar p-2">
+             <!-- Dynamically Populated -->
+          </div>
+        </div>
+      </section>
+
+
+<!-- Q-Format Converter Tool -->
+      <section id="qformat-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Fixed-Point (Q-Format)</h2>
+          <p class="text-gray-400">Convert between floating-point and fixed-point representations (Qm.n).</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl">
+          <!-- Configuration -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl space-y-6">
+             <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Configuration</h3>
+             
+             <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Integer Bits (m)</label>
+                  <input type="number" id="q-bits-int" value="15" min="0" max="63" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-sm text-gray-200 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-[10px] font-bold text-gray-600 uppercase mb-2">Fractional Bits (n)</label>
+                  <input type="number" id="q-bits-frac" value="16" min="0" max="63" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-sm text-gray-200 focus:outline-none">
+                </div>
+             </div>
+
+             <div class="p-4 bg-blue-600/5 border border-blue-500/10 rounded-xl">
+                <span class="block text-[10px] font-bold text-blue-400 uppercase mb-2">Dynamic Range Info</span>
+                <div class="grid grid-cols-2 gap-4 text-[10px] font-mono">
+                   <div>
+                      <span class="text-gray-500">Min:</span> <span id="q-info-min" class="text-gray-300">-32768.99</span>
+                   </div>
+                   <div>
+                      <span class="text-gray-500">Max:</span> <span id="q-info-max" class="text-gray-300">32767.99</span>
+                   </div>
+                   <div>
+                      <span class="text-gray-500">Step:</span> <span id="q-info-res" class="text-gray-400">0.0000152</span>
+                   </div>
+                   <div>
+                      <span class="text-gray-500">Total:</span> <span id="q-info-total" class="text-gray-400">32 Bits</span>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Converter -->
+          <div class="flex flex-col space-y-6 flex-1">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Floating Point Value</label>
+                <div class="relative">
+                   <input type="number" id="q-input-float" value="3.14159" step="any" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-violet-400 font-mono focus:outline-none focus:ring-1 focus:ring-violet-500/30">
+                </div>
+             </div>
+
+             <div class="bg-emerald-500/5 border border-emerald-500/10 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Fixed Point (Raw Hex)</label>
+                <div class="relative">
+                   <input type="text" id="q-input-fixed" value="0x0003243F" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-emerald-400 font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500/30">
+                   <div id="q-bits-viz" class="flex gap-0.5 mt-3 h-1.5 rounded-full overflow-hidden bg-gray-800">
+                      <!-- Visual bit split -->
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
 
 <!-- QR Code Generator Tool -->
       <section id="qr-tool" class="tool-section hidden animate-fade-in">
@@ -768,6 +2109,171 @@
         </div>
       </section>
 
+<!-- Resistor Color Code Tool -->
+      <section id="resistor-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Resistor Color Code</h2>
+          <p class="text-gray-400">Decode resistance values from 4, 5, and 6-band color codes.</p>
+        </header>
+
+        <div class="flex flex-col space-y-8 max-w-5xl">
+          <!-- Visual Resistor Display -->
+          <div class="relative bg-gray-800/40 border border-gray-700/50 rounded-3xl p-12 backdrop-blur-sm shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+             <!-- Resistor Leads -->
+             <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-2 bg-gradient-to-r from-gray-700 via-gray-400 to-gray-700 opacity-30"></div>
+             
+             <!-- Resistor Body -->
+             <div class="relative w-80 h-24 bg-amber-100 rounded-[40px] shadow-inner border-y border-amber-200/50 flex items-center justify-around px-10 z-10 transition-colors duration-500" id="resistor-body">
+                <div class="resistor-band w-4 h-full bg-gray-400 transition-colors" data-band="0"></div>
+                <div class="resistor-band w-4 h-full bg-gray-400 transition-colors" data-band="1"></div>
+                <div class="resistor-band w-4 h-full bg-gray-400 transition-colors hidden" data-band="2" id="band-3-visual"></div>
+                <div class="resistor-band w-4 h-full bg-gray-400 transition-colors" data-band="3"></div>
+                <div class="resistor-band w-4 h-full bg-gray-400 transition-colors" data-band="4"></div>
+                <div class="resistor-band w-4 h-full bg-gray-400 transition-colors hidden" data-band="5" id="band-6-visual"></div>
+             </div>
+
+             <!-- Result Overlay -->
+             <div class="mt-12 text-center">
+                <div id="resistor-out-value" class="text-5xl font-black text-white tracking-tight mb-2">1k Ω</div>
+                <div id="resistor-out-meta" class="text-gray-400 font-mono text-sm">±5% • 100ppm/K</div>
+             </div>
+          </div>
+
+          <!-- Controls Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+                <div class="flex justify-between items-center mb-6">
+                   <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest">Configuration</h3>
+                   <div class="flex bg-gray-900 rounded-lg p-0.5 border border-gray-700">
+                      <button class="resistor-mode-btn px-4 py-1.5 text-[10px] font-bold rounded-md transition-all bg-blue-600 text-white" data-bands="4">4 Band</button>
+                      <button class="resistor-mode-btn px-4 py-1.5 text-[10px] font-bold rounded-md transition-all text-gray-400 hover:text-gray-200" data-bands="5">5 Band</button>
+                      <button class="resistor-mode-btn px-4 py-1.5 text-[10px] font-bold rounded-md transition-all text-gray-400 hover:text-gray-200" data-bands="6">6 Band</button>
+                   </div>
+                </div>
+
+                <div class="space-y-4" id="resistor-selectors">
+                   <!-- Dynamically Generated Color Selectors -->
+                </div>
+             </div>
+
+             <!-- Quick Reference -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col justify-center">
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-700/50 pb-2">Color Multipliers</h3>
+                <div class="grid grid-cols-5 gap-2" id="resistor-quick-ref">
+                   <!-- Tiny color swatches for reference -->
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- SQL Formatter Tool -->
+      <section id="sql-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">SQL Formatter</h2>
+          <p class="text-gray-400">Pretty-print and minify SQL queries for various dialects.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input SQL</span>
+                <button id="sql-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="sql-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600" placeholder="Paste your SQL query here..."></textarea>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Formatted Output</span>
+                  <select id="sql-dialect" class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-0.5 text-[10px] text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500/50">
+                    <option value="sql">Standard SQL</option>
+                    <option value="postgresql">PostgreSQL</option>
+                    <option value="mysql">MySQL</option>
+                    <option value="tsql">T-SQL (SQL Server)</option>
+                    <option value="mariadb">MariaDB</option>
+                    <option value="sqlite">SQLite</option>
+                    <option value="plsql">Oracle PL/SQL</option>
+                  </select>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button id="sql-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all shadow-lg shadow-blue-500/20 active:scale-95">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+             </div>
+             <textarea id="sql-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Formatted SQL will appear here..."></textarea>
+             
+             <!-- Error Tip -->
+             <div id="sql-error" class="hidden absolute bottom-4 left-4 right-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 px-4 py-2 rounded-xl text-xs font-medium backdrop-blur-md animate-slide-up">
+                Invalid SQL syntax.
+             </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- Text Transform Tool -->
+      <section id="transform-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Text Transformer</h2>
+          <p class="text-gray-400">Sort, filter, and modify text lists in bulk.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[600px]">
+          <!-- Input + Controls -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input Text</span>
+                <button id="transform-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="transform-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600 border-b border-gray-700/50" placeholder="Enter lines of text here..."></textarea>
+             
+             <!-- Controls Area -->
+             <div class="p-4 bg-gray-900/50 space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <button id="transform-sort-asc" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Sort A-Z</button>
+                  <button id="transform-sort-desc" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Sort Z-A</button>
+                  <button id="transform-unique" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Remove Duplicates</button>
+                  <button id="transform-reverse" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Reverse Lines</button>
+                </div>
+                
+                <div class="flex space-x-2">
+                   <input type="text" id="transform-prefix" placeholder="Prefix" class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:ring-1 focus:ring-blue-500/50 outline-none">
+                   <input type="text" id="transform-suffix" placeholder="Suffix" class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:ring-1 focus:ring-blue-500/50 outline-none">
+                </div>
+                <div class="flex space-x-2">
+                   <button id="transform-apply-fix" class="flex-1 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold transition-all">Apply Fixes</button>
+                   <button id="transform-trim" class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Trim Edges</button>
+                </div>
+             </div>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Transformed Output</span>
+                <button id="transform-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all active:scale-95">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                  <span>Copy</span>
+                </button>
+             </div>
+             <textarea id="transform-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Transformed result will appear here..."></textarea>
+             
+             <!-- Stats Tip -->
+             <div class="absolute bottom-4 left-4 right-4 bg-gray-900/80 border border-gray-700/50 text-gray-400 px-4 py-2 rounded-xl text-[10px] font-mono backdrop-blur-md">
+                Lines: <span id="transform-line-count" class="text-blue-400">0</span> | Words: <span id="transform-word-count" class="text-blue-400">0</span> | Chars: <span id="transform-char-count" class="text-blue-400">0</span>
+             </div>
+          </div>
+        </div>
+      </section>
+
+
 <!-- ===== UNIT CONVERTER ===== -->
       <section id="unit-tool" class="tool-section hidden">
         <header class="mb-5">
@@ -781,7 +2287,7 @@
             Data Size
           </h3>
           <div class="flex gap-3 mb-3">
-            <input type="number" id="unit-data-input" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-blue-500/60 rounded-xl px-4 py-3 text-lg font-mono text-blue-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <input type="number" id="unit-data-input" value="1" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-blue-500/60 rounded-xl px-4 py-3 text-lg font-mono text-blue-300 focus:outline-none transition-colors placeholder:text-gray-600">
             <select id="unit-data-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
               <option>B</option><option>KB</option><option selected>MB</option><option>GB</option><option>TB</option><option>PB</option>
             </select>
@@ -796,14 +2302,108 @@
             Time Duration
           </h3>
           <div class="flex gap-3 mb-3">
-            <input type="number" id="unit-time-input" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-purple-500/60 rounded-xl px-4 py-3 text-lg font-mono text-purple-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <input type="number" id="unit-time-input" value="1" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-purple-500/60 rounded-xl px-4 py-3 text-lg font-mono text-purple-300 focus:outline-none transition-colors placeholder:text-gray-600">
             <select id="unit-time-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
               <option>ms</option><option selected>s</option><option>min</option><option>hr</option><option>day</option><option>week</option>
             </select>
           </div>
-          <div class="grid grid-cols-3 gap-2" id="unit-time-output"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2" id="unit-time-output"></div>
+        </div>
+
+        <div class="border-t border-gray-700/50 my-6"></div>
+
+        <!-- Length / Distance -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+            Length / Distance
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-length-input" value="1" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-emerald-500/60 rounded-xl px-4 py-3 text-lg font-mono text-emerald-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-length-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option>mm</option><option>cm</option><option selected>m</option><option>km</option><option>in</option><option>ft</option><option>yd</option><option>mi</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-2" id="unit-length-output"></div>
+        </div>
+
+        <div class="border-t border-gray-700/50 my-6"></div>
+
+        <!-- Mass / Weight -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+            Mass / Weight
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-mass-input" value="1" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-amber-500/60 rounded-xl px-4 py-3 text-lg font-mono text-amber-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-mass-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option>mg</option><option>g</option><option selected>kg</option><option>oz</option><option>lb</option><option>st</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-2" id="unit-mass-output"></div>
+        </div>
+
+        <div class="border-t border-gray-700/50 my-6"></div>
+
+        <!-- Speed / Velocity -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Speed / Velocity
+          </h3>
+          <div class="flex gap-3 mb-3">
+            <input type="number" id="unit-speed-input" value="1" placeholder="Enter value…" class="flex-1 bg-gray-800/60 border border-gray-700 focus:border-rose-500/60 rounded-xl px-4 py-3 text-lg font-mono text-rose-300 focus:outline-none transition-colors placeholder:text-gray-600">
+            <select id="unit-speed-from" class="bg-gray-800/60 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 font-semibold focus:outline-none cursor-pointer">
+              <option selected>m/s</option><option>km/h</option><option>mph</option><option>kn</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-2" id="unit-speed-output"></div>
         </div>
       </section>
+
+<!-- URL Encoder/Decoder Tool -->
+      <section id="url-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">URL Encoder / Decoder</h2>
+          <p class="text-gray-400">Safely encode or decode URL components and query parameters.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input Text</span>
+                <button id="url-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="url-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600" placeholder="Paste text or encoded URL here..."></textarea>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Output</span>
+                  <div class="flex bg-gray-900 rounded-lg p-0.5 border border-gray-700">
+                    <button id="url-mode-encode" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all bg-blue-600 text-white shadow-sm">Encode</button>
+                    <button id="url-mode-decode" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">Decode</button>
+                  </div>
+                </div>
+                <button id="url-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all active:scale-95">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                  <span>Copy</span>
+                </button>
+             </div>
+             <textarea id="url-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Result will appear here..."></textarea>
+             
+             <!-- Error Tip -->
+             <div id="url-error" class="hidden absolute bottom-4 left-4 right-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 px-4 py-2 rounded-xl text-xs font-medium backdrop-blur-md animate-slide-up">
+                Malformed URI sequence.
+             </div>
+          </div>
+        </div>
+      </section>
+
 
 <!-- UUID Generator Tool -->
       <section id="uuid-tool" class="tool-section hidden animate-fade-in">
@@ -864,10 +2464,55 @@
         </div>
       </section>
 
+<!-- YAML ⟷ JSON Tool -->
+      <section id="yaml-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">YAML ⟷ JSON</h2>
+          <p class="text-gray-400">Convert between YAML and JSON formats with ease.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+          <!-- Input Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input</span>
+                  <div class="flex bg-gray-900 rounded-lg p-0.5 border border-gray-700">
+                    <button id="yaml-input-type-yaml" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all bg-blue-600 text-white shadow-sm">YAML</button>
+                    <button id="yaml-input-type-json" class="px-3 py-1 text-[10px] font-bold rounded-md transition-all text-gray-500 hover:text-gray-300">JSON</button>
+                  </div>
+                </div>
+                <button id="yaml-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="yaml-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600" placeholder="Paste your YAML or JSON here..."></textarea>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative group">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest" id="yaml-output-label">JSON Output</span>
+                <div class="flex items-center space-x-2">
+                  <button id="yaml-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all shadow-lg shadow-blue-500/20 active:scale-95">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+             </div>
+             <textarea id="yaml-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Conversion result will appear here..."></textarea>
+             
+             <!-- Error Tip -->
+             <div id="yaml-error" class="hidden absolute bottom-4 left-4 right-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 px-4 py-2 rounded-xl text-xs font-medium backdrop-blur-md animate-slide-up">
+                Invalid input format.
+             </div>
+          </div>
+        </div>
+      </section>
+
+
     </div>
   </main>
 
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="module" src="renderer.js"></script>
+  <script type="module" src="bundle.js"></script>
 </body>
 </html>

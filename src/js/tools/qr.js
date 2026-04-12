@@ -46,11 +46,6 @@
       document.body.removeChild(a);
   });
 
-  // Initialize
-  $epochCurrentBtn.trigger('click');
-  const now = new Date();
-  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-  $dateInput.val(now.toISOString().slice(0, 19));
-  updateDateUI($dateInput.val());
+
 
   // ============================================================

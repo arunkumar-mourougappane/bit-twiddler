@@ -1,0 +1,38 @@
+<!-- Variable Naming Tool -->
+      <section id="naming-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Variable & Function Naming</h2>
+          <p class="text-gray-400">Get naming suggestions for your code based on common conventions.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Input Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex items-center space-x-4">
+             <div class="flex-1">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Target Subject</label>
+                <input type="text" id="naming-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-violet-400 font-bold focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-shadow" placeholder="e.g. user, session, profile...">
+             </div>
+          </div>
+
+          <!-- Suggestions Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+             <!-- Boolean / State -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-[10px] font-bold text-violet-400 uppercase tracking-[0.2em] mb-4">Booleans / State</h3>
+                <div id="naming-out-bool" class="space-y-2"></div>
+             </div>
+             
+             <!-- Actions / Functions -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-[10px] font-bold text-emerald-400 uppercase tracking-[0.2em] mb-4">Actions / Functions</h3>
+                <div id="naming-out-action" class="space-y-2"></div>
+             </div>
+
+             <!-- Collections / Lists -->
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 backdrop-blur-sm">
+                <h3 class="text-[10px] font-bold text-amber-400 uppercase tracking-[0.2em] mb-4">Collections / Counts</h3>
+                <div id="naming-out-list" class="space-y-2"></div>
+             </div>
+          </div>
+        </div>
+      </section>

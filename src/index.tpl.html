@@ -16,140 +16,395 @@
       </h1>
       <p class="text-xs text-gray-500 mt-1 uppercase hidden md:block font-semibold tracking-wider">Developer Toolkit</p>
     </div>
-    <nav class="flex-1 overflow-y-auto py-6">
-      <ul class="space-y-1.5 px-3" id="nav-list">
-        <li>
-          <a href="#" data-target="base64-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 bg-blue-600/10 text-blue-400 font-medium border border-blue-500/20 shadow-sm">
-            <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-              <span class="hidden md:inline">Base64</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="hash-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-            <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-              <span class="hidden md:inline">Hash Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="epoch-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              <span class="hidden md:inline">Epoch Converter</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="json-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-              <span class="hidden md:inline">JSON Formatter</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="jwt-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-              <span class="hidden md:inline">JWT Decoder</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="color-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-              <span class="hidden md:inline">Color Converter</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="uuid-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-              <span class="hidden md:inline">UUID Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="qr-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
-              <span class="hidden md:inline">QR Code Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="regex-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-              <span class="hidden md:inline">Regex Tester</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="diff-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-              <span class="hidden md:inline">Diff Viewer</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="base-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
-              <span class="hidden md:inline">Base Converter</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-        <!-- Quick-Win Tools -->
-        <ul class="space-y-1.5 px-3 mt-0" id="nav-list-qw">
-        <li>
-          <a href="#" data-target="lorem-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12M4 18h8"></path></svg>
-              <span class="hidden md:inline">Lorem Ipsum</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="inspect-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              <span class="hidden md:inline">String Inspector</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="password-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
-              <span class="hidden md:inline">Password Generator</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="markdown-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-              <span class="hidden md:inline">Markdown Preview</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" data-target="unit-tool" class="nav-link block px-4 py-2.5 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
-             <div class="flex items-center justify-center md:justify-start md:space-x-3">
-              <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
-              <span class="hidden md:inline">Unit Converter</span>
-            </div>
-          </a>
-        </li>
-        </ul>
+    
+    <div class="px-4 py-4 border-b border-gray-700 bg-gray-800 hidden md:block">
+      <div class="relative group">
+        <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="sidebar-search" placeholder="Quick find... ( / )" class="w-full bg-gray-900 border border-gray-700/50 rounded-xl pl-10 pr-4 py-2 text-xs text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all placeholder-gray-600">
+      </div>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto pt-2 pb-8 custom-scrollbar">
+      <div class="category-group px-3 mb-2" data-category="security">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Security & Encoding</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="base64-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 bg-blue-600/10 text-blue-400 font-medium border border-blue-500/20 shadow-sm">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Base64</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="hash-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                  <span class="hidden md:inline text-sm">Hash</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="jwt-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <span class="hidden md:inline text-sm">JWT</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="password-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+                  <span class="hidden md:inline text-sm">Passwords</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="pem-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <span class="hidden md:inline text-sm">PEM Inspector</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="url-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                  <span class="hidden md:inline text-sm">URL Tools</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="entities-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Entities</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="datetime">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Data & Time</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="json-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                  <span class="hidden md:inline text-sm">JSON Format</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="yaml-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm3 4h10M7 12h10M7 15h10"></path></svg>
+                  <span class="hidden md:inline text-sm">YAML Format</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="sql-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3zm4 4h8m-8 4h8"></path></svg>
+                  <span class="hidden md:inline text-sm">SQL Format</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="beautify-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Beautifier</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="epoch-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Epoch</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="unit-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Unit Converter</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="network">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Network</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="cidr-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                  <span class="hidden md:inline text-sm">CIDR Calc</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="lowlevel">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Low-Level</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="bits-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                  <span class="hidden md:inline text-sm">Bits & Masks</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="crc-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <span class="hidden md:inline text-sm">CRC Calc</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="endian-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">Endian Swapper</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="carray-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <span class="hidden md:inline text-sm">C-Array Formatter</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="limits-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                  <span class="hidden md:inline text-sm">Integer Limits</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="resistor-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12"></path></svg>
+                  <span class="hidden md:inline text-sm">Resistor Colors</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="divider-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                  <span class="hidden md:inline text-sm">Circuits / Ohm</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="baud-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                  <span class="hidden md:inline text-sm">Baud Rate Error</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="qformat-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+                  <span class="hidden md:inline text-sm">Q-Format (Fixed)</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="cobs-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3zm4 4h8m-8 4h8"></path></svg>
+                  <span class="hidden md:inline text-sm">COBS Framing</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="protocols-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                  <span class="hidden md:inline text-sm">Protocol Cards</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="dev">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Development</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="regex-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Regex Tester</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="diff-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                  <span class="hidden md:inline text-sm">Diff Viewer</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="cron-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Cron Parser</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="qr-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+                  <span class="hidden md:inline text-sm">QR Code</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="markdown-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                  <span class="hidden md:inline text-sm">Markdown</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="misc">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Content & Misc</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="lorem-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h12M4 18h8"></path></svg>
+                  <span class="hidden md:inline text-sm">Lorem Ipsum</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="inspect-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">Inspector</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="color-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                  <span class="hidden md:inline text-sm">Colors</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="case-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 10h12M3 15h12M17 5h4v10h-4z"></path></svg>
+                  <span class="hidden md:inline text-sm">Case Converter</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="transform-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                  <span class="hidden md:inline text-sm">Transformer</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="naming-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                  <span class="hidden md:inline text-sm">Naming Helper</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category-group px-3 mb-2" data-category="reference">
+        <button class="category-header w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] hover:text-gray-300 transition-colors group">
+          <span>Reference</span>
+          <svg class="w-3 h-3 transform transition-transform duration-200 opacity-0 group-hover:opacity-100 md:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="category-content">
+          <ul class="space-y-1 mt-1">
+            <li>
+              <a href="#" data-target="http-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span class="hidden md:inline text-sm">HTTP Status</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-target="mime-tool" class="nav-link block px-4 py-2 rounded-lg transition-all duration-200 text-gray-400 hover:bg-gray-700/50 hover:text-gray-200 font-medium border border-transparent">
+                <div class="flex items-center justify-center md:justify-start md:space-x-3">
+                  <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                  <span class="hidden md:inline text-sm">MIME Types</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- Sidebar Footer: Theme Picker -->
@@ -179,6 +434,6 @@
   </main>
 
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="module" src="renderer.js"></script>
+  <script type="module" src="bundle.js"></script>
 </body>
 </html>

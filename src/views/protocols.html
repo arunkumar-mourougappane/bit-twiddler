@@ -1,0 +1,22 @@
+<!-- Protocol Cheat-Sheet Tool -->
+      <section id="protocols-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Protocol Reference</h2>
+          <p class="text-gray-400">Quick-glance reference for common hardware communication protocols and pinouts.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-6xl">
+          <!-- Search & Filter -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-4 backdrop-blur-sm shadow-xl flex items-center gap-4">
+             <div class="relative flex-1">
+                <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" id="prot-search" class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-11 pr-4 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500/50" placeholder="Search protocols (e.g. I2C, JTAG)...">
+             </div>
+          </div>
+
+          <!-- Cards Grid -->
+          <div id="prot-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-[calc(100vh-320px)] overflow-y-auto pr-2 custom-scrollbar p-2">
+             <!-- Dynamically Populated -->
+          </div>
+        </div>
+      </section>

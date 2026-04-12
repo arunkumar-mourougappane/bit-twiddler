@@ -1,0 +1,98 @@
+<!-- CIDR / Subnet Calculator -->
+      <section id="cidr-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">CIDR / Subnet Calculator</h2>
+          <p class="text-gray-400">Calculate IP ranges, masks, and network details for IPv4.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Input Area -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl">
+             <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                   <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">IP Address / CIDR</label>
+                   <input type="text" id="cidr-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-xl text-emerald-400 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-shadow" placeholder="e.g. 192.168.1.0/24">
+                </div>
+                <div class="md:w-64">
+                   <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Common Masks</label>
+                   <select id="cidr-mask-select" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 h-[52px]">
+                      <option value="32">/32 (1 host)</option>
+                      <option value="31">/31 (2 hosts)</option>
+                      <option value="30">/30 (4 hosts)</option>
+                      <option value="29">/29 (8 hosts)</option>
+                      <option value="28">/28 (16 hosts)</option>
+                      <option value="27">/27 (32 hosts)</option>
+                      <option value="26">/26 (64 hosts)</option>
+                      <option value="25">/25 (128 hosts)</option>
+                      <option value="24" selected>/24 (256 hosts)</option>
+                      <option value="23">/23 (512 hosts)</option>
+                      <option value="22">/22 (1024 hosts)</option>
+                      <option value="21">/21 (2048 hosts)</option>
+                      <option value="20">/20 (4096 hosts)</option>
+                      <option value="16">/16 (65,536 hosts)</option>
+                      <option value="8">/8 (16,777,216 hosts)</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+
+          <!-- Results Hub -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Network Address</label>
+                <div id="cidr-out-network" class="text-lg font-mono text-emerald-300 h-7"></div>
+                <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="cidr-out-network"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Subnet Mask</label>
+                <div id="cidr-out-mask" class="text-lg font-mono text-emerald-300 h-7"></div>
+                <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="cidr-out-mask"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Broadcast</label>
+                <div id="cidr-out-broadcast" class="text-lg font-mono text-emerald-300 h-7"></div>
+                <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="cidr-out-broadcast"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+             </div>
+             <div class="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 backdrop-blur-sm group relative">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Usable Hosts</label>
+                <div id="cidr-out-hosts" class="text-lg font-mono text-emerald-300 h-7"></div>
+             </div>
+          </div>
+
+          <!-- Ranges Pane -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Address Range</h3>
+             
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">First Useable</span>
+                      <span id="cidr-out-first" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">Last Useable</span>
+                      <span id="cidr-out-last" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                </div>
+                <div class="space-y-4">
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">Hex Mask</span>
+                      <span id="cidr-out-hex" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                   <div class="flex justify-between items-end border-b border-gray-700/50 pb-2">
+                      <span class="text-xs text-gray-500 font-medium">Wildcard Mask</span>
+                      <span id="cidr-out-wildcard" class="text-base font-mono text-gray-200"></span>
+                   </div>
+                </div>
+             </div>
+             
+             <!-- Error Tip -->
+             <div id="cidr-error" class="hidden absolute top-0 left-0 w-full h-full bg-rose-900/40 backdrop-blur-sm flex items-center justify-center p-6 text-center">
+                <div class="bg-rose-500 text-white px-6 py-3 rounded-xl font-bold shadow-2xl">
+                   Invalid IP address or CIDR notation
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>

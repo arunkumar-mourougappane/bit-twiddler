@@ -1,9 +1,16 @@
 <!-- Epoch Converter Tool -->
       <section id="epoch-tool" class="tool-section hidden animate-fade-in">
-        <header class="mb-4">
-          <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
-          <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
+        <header class="mb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h2 class="text-3xl font-bold text-white mb-2">Epoch Converter</h2>
+            <p class="text-gray-400">Convert Unix timestamps to human-readable dates and vice versa.</p>
+          </div>
+          <div class="bg-blue-600/10 border border-blue-500/20 rounded-xl px-4 py-2 flex flex-col items-center min-w-[180px]">
+            <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-1">Live Current Epoch</span>
+            <div id="live-epoch" class="text-xl font-mono font-bold text-blue-300">0000000000</div>
+          </div>
         </header>
+
         <div class="w-full flex flex-col gap-6">
           
           <!-- Timestamp to Date -->
@@ -17,14 +24,25 @@
               <button id="epoch-current-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors font-medium shadow-lg shadow-blue-500/20 whitespace-nowrap">Now</button>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
                 <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Local Time</label>
                 <div id="epoch-local-out" class="text-sm text-gray-200 font-medium h-5"></div>
+                <button class="copy-field absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="epoch-local-out"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
               </div>
-              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
                 <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">GMT (UTC)</label>
                 <div id="epoch-gmt-out" class="text-sm text-gray-200 font-medium h-5"></div>
+                <button class="copy-field absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="epoch-gmt-out"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">ISO 8601</label>
+                <div id="epoch-iso-out" class="text-sm text-gray-200 font-medium h-5 truncate pr-6"></div>
+                <button class="copy-field absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-blue-400" data-from="epoch-iso-out"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Relative</label>
+                <div id="epoch-relative-out" class="text-sm text-blue-400 font-bold h-5"></div>
               </div>
             </div>
           </div>
@@ -34,12 +52,40 @@
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
             <h3 class="text-xl font-semibold text-white mb-4">Date ➔ Timestamp</h3>
             <div class="flex flex-col mb-4">
-               <input type="datetime-local" id="date-input" step="1" class="w-full sm:w-2/3 bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-shadow text-sm">
+               <input type="datetime-local" id="date-input" step="1" class="w-full lg:w-1/2 bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-shadow text-sm">
             </div>
             
-            <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 inline-block min-w-[200px]">
-              <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Seconds</label>
-              <div id="date-timestamp-out" class="text-xl text-purple-400 font-mono font-bold h-6"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Seconds</label>
+                <div id="date-timestamp-out" class="text-xl text-purple-400 font-mono font-bold h-6"></div>
+                <button class="copy-field absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-purple-400" data-from="date-timestamp-out"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+              <div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700/50 group relative">
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Unix Milliseconds</label>
+                <div id="date-ms-out" class="text-xl text-purple-400 font-mono font-bold h-6 opacity-60"></div>
+                <button class="copy-field absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-purple-400" data-from="date-ms-out"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timezone Conversion -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+            <h3 class="text-xl font-semibold text-white mb-4">Timezone Converter</h3>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-5">
+              <div class="flex-1 max-w-md">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 ml-1">Target Timezone</label>
+                <select id="tz-selector" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-white transition-shadow text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50">
+                   <!-- Populated via JS -->
+                </select>
+              </div>
+            </div>
+            
+            <div class="bg-gray-900/70 rounded-xl p-5 border border-gray-700/50 group relative min-h-[100px] flex flex-col justify-center">
+               <label class="block text-xs font-bold text-emerald-500/80 uppercase tracking-wider mb-2">Result in Selection</label>
+               <div id="tz-output" class="text-2xl font-mono font-bold text-gray-100 break-words leading-tight">Pick a timezone...</div>
+               <button class="copy-field absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-emerald-400" data-from="tz-output"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg></button>
             </div>
           </div>
 

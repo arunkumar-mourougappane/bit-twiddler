@@ -1,0 +1,54 @@
+<!-- Text Transform Tool -->
+      <section id="transform-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Text Transformer</h2>
+          <p class="text-gray-400">Sort, filter, and modify text lists in bulk.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)] min-h-[600px]">
+          <!-- Input + Controls -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Input Text</span>
+                <button id="transform-clear-btn" class="text-xs text-gray-500 hover:text-rose-400 transition-colors py-1 px-2">Clear</button>
+             </div>
+             <textarea id="transform-input" class="flex-1 w-full bg-transparent border-none p-5 text-gray-200 font-mono text-sm focus:outline-none resize-none placeholder-gray-600 border-b border-gray-700/50" placeholder="Enter lines of text here..."></textarea>
+             
+             <!-- Controls Area -->
+             <div class="p-4 bg-gray-900/50 space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <button id="transform-sort-asc" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Sort A-Z</button>
+                  <button id="transform-sort-desc" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Sort Z-A</button>
+                  <button id="transform-unique" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Remove Duplicates</button>
+                  <button id="transform-reverse" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Reverse Lines</button>
+                </div>
+                
+                <div class="flex space-x-2">
+                   <input type="text" id="transform-prefix" placeholder="Prefix" class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:ring-1 focus:ring-blue-500/50 outline-none">
+                   <input type="text" id="transform-suffix" placeholder="Suffix" class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:ring-1 focus:ring-blue-500/50 outline-none">
+                </div>
+                <div class="flex space-x-2">
+                   <button id="transform-apply-fix" class="flex-1 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold transition-all">Apply Fixes</button>
+                   <button id="transform-trim" class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg text-xs font-medium transition-all">Trim Edges</button>
+                </div>
+             </div>
+          </div>
+
+          <!-- Output Pane -->
+          <div class="flex flex-col h-full bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl relative">
+             <div class="px-5 py-3 border-b border-gray-700/50 bg-gray-800/50 flex justify-between items-center">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Transformed Output</span>
+                <button id="transform-copy-btn" class="flex items-center space-x-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-medium transition-all active:scale-95">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                  <span>Copy</span>
+                </button>
+             </div>
+             <textarea id="transform-output" readonly class="flex-1 w-full bg-gray-900/30 border-none p-5 text-blue-300 font-mono text-sm focus:outline-none resize-none" placeholder="Transformed result will appear here..."></textarea>
+             
+             <!-- Stats Tip -->
+             <div class="absolute bottom-4 left-4 right-4 bg-gray-900/80 border border-gray-700/50 text-gray-400 px-4 py-2 rounded-xl text-[10px] font-mono backdrop-blur-md">
+                Lines: <span id="transform-line-count" class="text-blue-400">0</span> | Words: <span id="transform-word-count" class="text-blue-400">0</span> | Chars: <span id="transform-char-count" class="text-blue-400">0</span>
+             </div>
+          </div>
+        </div>
+      </section>

@@ -1,0 +1,58 @@
+<!-- Baud Rate Error Tool -->
+      <section id="baud-tool" class="tool-section hidden animate-fade-in">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">Baud Rate Error</h2>
+          <p class="text-gray-400">Analyze timing errors between clock frequency and target UART baud rates.</p>
+        </header>
+
+        <div class="flex flex-col space-y-6 max-w-5xl">
+          <!-- Main Controls -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm shadow-xl flex flex-col md:flex-row items-end gap-6">
+             <div class="flex-1 w-full">
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">MCU Clock Frequency (Hz)</label>
+                <div class="flex gap-2">
+                   <input type="number" id="baud-clock" value="16000000" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-2xl text-amber-400 font-mono focus:outline-none focus:ring-1 focus:ring-amber-500/30">
+                   <select id="baud-preset" class="bg-gray-800 text-gray-300 border border-gray-700 rounded-xl px-4 py-3 text-xs focus:outline-none">
+                      <option value="8000000">8 MHz</option>
+                      <option value="16000000" selected>16 MHz</option>
+                      <option value="24000000">24 MHz</option>
+                      <option value="48000000">48 MHz</option>
+                      <option value="72000000">72 MHz</option>
+                      <option value="120000000">120 MHz</option>
+                      <option value="custom">Custom</option>
+                   </select>
+                </div>
+             </div>
+             <div class="flex bg-gray-900 rounded-xl p-1 border border-gray-700 h-[52px] items-center">
+                <button class="baud-os-btn px-4 py-1.5 text-[10px] font-bold rounded-lg transition-all bg-blue-600 text-white" data-os="16">16x Sample</button>
+                <button class="baud-os-btn px-4 py-1.5 text-[10px] font-bold rounded-lg transition-all text-gray-500 hover:text-gray-300" data-os="8">8x Sample</button>
+             </div>
+          </div>
+
+          <!-- Analysis Table -->
+          <div class="bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm shadow-xl">
+             <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-700/30 text-gray-400 border-b border-gray-700/50">
+                   <tr>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Baud Rate</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Ideal Divider</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Actual Divider</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest">Actual Baud</th>
+                      <th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-right">Error %</th>
+                   </tr>
+                </thead>
+                <tbody id="baud-table-body" class="divide-y divide-gray-700/30 font-mono text-sm">
+                   <!-- Populated by JS -->
+                </tbody>
+             </table>
+          </div>
+
+          <!-- Alert Tip -->
+          <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 flex items-start space-x-4">
+             <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+             <p class="text-[11px] text-gray-500 leading-normal">
+                Error rates above **2.0%** are generally considered unreliable for stable UART communication. If your error is high, consider using a crystal frequency that is an integer multiple of common baud rates (e.g., **11.0592 MHz** or **14.7456 MHz**).
+             </p>
+          </div>
+        </div>
+      </section>
