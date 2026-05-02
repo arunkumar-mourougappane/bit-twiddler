@@ -20,7 +20,7 @@
   "author": "",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/cli": "^4.2.4",
     "autoprefixer": "^10.4.19",
     "electron": "^41.2.0",
     "electron-builder": "^26.8.1",
