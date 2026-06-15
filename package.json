@@ -20,12 +20,12 @@
   "author": "",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/cli": "^4.2.4",
     "autoprefixer": "^10.4.19",
-    "electron": "^41.2.0",
+    "electron": "^41.5.0",
     "electron-builder": "^26.8.1",
     "esbuild": "^0.28.0",
-    "postcss": "^8.4.38",
+    "postcss": "^8.5.15",
     "tailwindcss": "^4.2.2"
   },
   "dependencies": {
