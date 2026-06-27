@@ -1,7 +1,7 @@
 {
   "name": "bit-twiddler",
   "version": "1.0.0",
-  "description": "A swiss army developer toolkit",
+  "description": "[ARCHIVED] A swiss army developer toolkit — see bit-twiddler-rs for the active rewrite",
   "main": "main.js",
   "scripts": {
     "build:html": "node build-html.js",

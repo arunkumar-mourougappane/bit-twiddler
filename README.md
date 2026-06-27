@@ -1,5 +1,12 @@
 # Bit Twiddler 🛠️
 
+> [!WARNING]
+> **This repository is archived and no longer maintained.**
+> Development has moved to the Rust rewrite: **[bit-twiddler-rs](https://github.com/arunkumar-mourougappane/bit-twiddler-rs)**
+> Please use that project for all new work and issue reports. This repo is kept for historical reference only.
+
+---
+
 > **A Swiss-Army Developer Toolkit — offline-first, privacy-respecting, and blazingly fast.**
 
 [![GitHub Release](https://img.shields.io/github/v/release/arunkumar-mourougappane/bit-twiddler?label=release)](https://github.com/arunkumar-mourougappane/bit-twiddler/releases/latest)
